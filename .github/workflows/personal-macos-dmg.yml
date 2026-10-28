@@ -1,0 +1,54 @@
+name: Personal macOS DMG
+
+on:
+  workflow_dispatch:
+    inputs:
+      arch:
+        description: macOS architecture
+        type: choice
+        options: [arm64, x86_64]
+        default: arm64
+
+jobs:
+  dmg:
+    name: macOS ${{ inputs.arch }} (unsigned)
+    runs-on: ${{ inputs.arch == 'arm64' && 'macos-15' || 'macos-15-intel' }}
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v6
+
+      # Native macOS runtime (.dylib) lives in Git LFS on the upstream repo only
+      - name: Fetch macOS runtime from upstream LFS
+        env:
+          MACOS_ARCH: ${{ inputs.arch }}
+        run: |
+          git remote add upstream https://github.com/NuvioMedia/NuvioDesktop.git
+          git fetch --depth=1 upstream Dev
+          git lfs install --local
+          git lfs fetch upstream Dev --include="composeApp/src/desktopMain/native/macos/runtime/${MACOS_ARCH}/**"
+          git lfs checkout "composeApp/src/desktopMain/native/macos/runtime/${MACOS_ARCH}/"
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v6
+
+      - name: Build unsigned DMG
+        env:
+          MACOS_ARCH: ${{ inputs.arch }}
+        run: |
+          ./gradlew :composeApp:packageReleaseDmg \
+            "-Pnuvio.macos.arch=${MACOS_ARCH}" \
+            -Pcompose.desktop.packaging.checkJdkVendor=false \
+            --no-configuration-cache --no-daemon --stacktrace
+
+      - name: Locate DMG
+        run: find composeApp/build -name '*.dmg' -print
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nuvio-desktop-macos-${{ inputs.arch }}
+          path: composeApp/build/**/*.dmg
+          if-no-files-found: error
