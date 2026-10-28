@@ -59,7 +59,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           MACOS_ARCH: ${{ inputs.arch }}
         run: |
-          dmg="$(find composeApp/build -name "Nuvio-macOS-${MACOS_ARCH}-*.dmg" | head -n 1)"
+          dmg="$(find composeApp/build -name "Cinebox-macOS-${MACOS_ARCH}-*.dmg" | head -n 1)"
           test -f "$dmg"
           ls -lh "$dmg"
           tag="personal-${MACOS_ARCH}-${GITHUB_RUN_NUMBER}"
