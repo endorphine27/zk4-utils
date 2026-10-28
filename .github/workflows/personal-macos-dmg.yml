@@ -35,6 +35,10 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v6
 
+      # Empty on purpose: official keys (Supabase, Trakt, MDBList, Sentry) are not available here
+      - name: Create empty local.properties
+        run: touch local.properties
+
       - name: Build unsigned DMG
         env:
           MACOS_ARCH: ${{ inputs.arch }}
