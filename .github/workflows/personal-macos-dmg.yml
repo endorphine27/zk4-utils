@@ -9,6 +9,9 @@ on:
         options: [arm64, x86_64]
         default: arm64
 
+permissions:
+  contents: write
+
 jobs:
   dmg:
     name: macOS ${{ inputs.arch }} (unsigned)
@@ -51,11 +54,13 @@ jobs:
             -Pcompose.desktop.packaging.checkJdkVendor=false \
             --no-configuration-cache --no-daemon --stacktrace
 
-      - name: Locate DMG
-        run: find composeApp/build -name '*.dmg' -print
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: nuvio-desktop-macos-${{ inputs.arch }}
-          path: composeApp/build/**/*.dmg
-          if-no-files-found: error
+      - name: Publish DMG to a private release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MACOS_ARCH: ${{ inputs.arch }}
+        run: |
+          dmg="$(find composeApp/build -name "Nuvio-macOS-${MACOS_ARCH}-*.dmg" | head -n 1)"
+          test -f "$dmg"
+          ls -lh "$dmg"
+          tag="personal-${MACOS_ARCH}-${GITHUB_RUN_NUMBER}"
+          gh release create "$tag" "$dmg" --title "Personal build ${MACOS_ARCH} #${GITHUB_RUN_NUMBER}" --notes "Unsigned personal build of the fork." --prerelease
