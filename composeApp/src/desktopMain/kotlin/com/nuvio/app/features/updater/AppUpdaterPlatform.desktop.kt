@@ -53,8 +53,8 @@ actual object AppUpdaterPlatform {
         get() = currentOs != DesktopUpdaterOs.UNKNOWN && linuxInstallMethod != LinuxInstallMethod.FLATPAK
 
     actual val releaseSource: AppUpdateReleaseSource = AppUpdateReleaseSource(
-        owner = "NuvioMedia",
-        repo = "NuvioDesktop",
+        owner = "endorphine27",
+        repo = "nuvio-desktop",
         channelBranch = null,
         includePrereleases = true,
         userAgent = "NuvioDesktop",
