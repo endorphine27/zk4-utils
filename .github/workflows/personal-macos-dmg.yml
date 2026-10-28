@@ -22,11 +22,14 @@ jobs:
         env:
           MACOS_ARCH: ${{ inputs.arch }}
         run: |
-          git remote add upstream https://github.com/NuvioMedia/NuvioDesktop.git
-          git fetch --depth=1 upstream Dev
+          RT="composeApp/src/desktopMain/native/macos/runtime/${MACOS_ARCH}"
           git lfs install --local
-          git lfs fetch upstream Dev --include="composeApp/src/desktopMain/native/macos/runtime/${MACOS_ARCH}/**"
-          git lfs checkout "composeApp/src/desktopMain/native/macos/runtime/${MACOS_ARCH}/"
+          # Objects exist only on upstream's LFS server, so point LFS there
+          git config lfs.url https://github.com/NuvioMedia/NuvioDesktop.git/info/lfs
+          git lfs pull --include="${RT}/**"
+          ls -la "${RT}"
+          file "${RT}/libmpv.2.dylib"
+          file "${RT}/libmpv.2.dylib" | grep -q "Mach-O" || { echo "LFS runtime not downloaded" >&2; head -c 200 "${RT}/libmpv.2.dylib"; exit 1; }
 
       - uses: actions/setup-java@v5
         with:
