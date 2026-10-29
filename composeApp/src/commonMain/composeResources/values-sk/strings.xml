@@ -461,7 +461,7 @@
     <string name="settings_licenses_attributions_section_app">LICENCIA APLIKÁCIE</string>
     <string name="settings_licenses_attributions_section_data">DÁTA A SLUŽBY</string>
     <string name="settings_licenses_attributions_section_playback">LICENCIA PREHRÁVANIA</string>
-    <string name="settings_licenses_attributions_nuvio_title">Nuvio Mobile</string>
+    <string name="settings_licenses_attributions_nuvio_title">CINEBOX Mobile</string>
     <string name="settings_licenses_attributions_nuvio_body">Zdrojový kód a licenčné podmienky sú dostupné v repozitári projektu.</string>
     <string name="settings_licenses_attributions_nuvio_license">Licencované pod GNU General Public License v3.0.</string>
     <string name="settings_licenses_attributions_tmdb_title">The Movie Database (TMDB)</string>
@@ -778,7 +778,7 @@
     <string name="settings_notifications_test_requires_saved_show">Najprv uložte seriál do knižnice, aby ste mohli testovať oznámenia.</string>
     <string name="settings_notifications_test_title">Testovacie oznámenie</string>
     <string name="community_section_title">Komunita</string>
-    <string name="community_section_description">Pozrite sa na ľudí, ktorí budujú a podporujú Nuvio na Mobile, TV a Webe.</string>
+    <string name="community_section_description">Pozrite sa na ľudí, ktorí budujú a podporujú CINEBOX na Mobile, TV a Webe.</string>
     <string name="community_donation_progress_title">Server a údržba tohto mesiaca</string>
     <string name="community_donation_progress_complete">Pokryté. Ďalšia podpora ide na vývoj.</string>
     <string name="community_donation_progress_remaining">Po 100 % ide ďalšia podpora na vývoj.</string>
@@ -2228,7 +2228,7 @@
     <string name="settings_licenses_attributions_haze_title">Haze 1.7.2</string>
     <string name="settings_licenses_attributions_haze_body">Používa sa na efekty rozostrenia pozadia. Vytvoril Chris Banes.</string>
     <string name="settings_licenses_attributions_haze_license">Licencované pod Apache License, Verzia 2.0.</string>
-    <string name="action_support_nuvio">Podporiť Nuvio</string>
+    <string name="action_support_nuvio">Podporiť CINEBOX</string>
     <string name="settings_appearance_app_icon">Ikona aplikácie</string>
     <string name="settings_appearance_app_icon_arctic_blue">Arktická modrá</string>
     <string name="settings_appearance_app_icon_android_confirmation_message">Zmena na %1$s zatvorí aplikáciu CINEBOX. Ťuknutím na OK pokračujte.</string>
@@ -2269,8 +2269,8 @@
     <string name="settings_stream_background_description">Vyberte pozadie pre obrazovku streamov.</string>
     <string name="settings_meta_poster_transition">Prechod plagátu</string>
     <string name="settings_meta_poster_transition_description">Pri otváraní detailov zväčšiť a rozostriť plagát.</string>
-    <string name="community_membership_title">Členstvo podporovateľa Nuvio</string>
-    <string name="community_membership_description">Podpora aplikácie Nuvio pomáha pokrývať náklady na infraštruktúru a nepretržitý vývoj, pričom základné funkcie ostávajú pre všetkých zadarmo.</string>
+    <string name="community_membership_title">Členstvo podporovateľa CINEBOX</string>
+    <string name="community_membership_description">Podpora aplikácie CINEBOX pomáha pokrývať náklady na infraštruktúru a nepretržitý vývoj, pričom základné funkcie ostávajú pre všetkých zadarmo.</string>
     <string name="community_view_supporter_membership">Zobraziť členstvo podporovateľa</string>
     <string name="community_membership_you_are">Ste</string>
     <string name="community_membership_thank_you">Ďakujeme.</string>

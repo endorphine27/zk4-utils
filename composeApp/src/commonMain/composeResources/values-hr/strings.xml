@@ -577,7 +577,7 @@
     <string name="settings_licenses_attributions_haze_title">Haze 1.7.2</string>
     <string name="settings_licenses_attributions_haze_body">Koristi se za efekte zamućenja pozadine. Autor: Chris Banes.</string>
     <string name="settings_licenses_attributions_haze_license">Licencirano pod licencom Apache License, verzija 2.0.</string>
-    <string name="settings_licenses_attributions_nuvio_title">Nuvio Mobile</string>
+    <string name="settings_licenses_attributions_nuvio_title">CINEBOX Mobile</string>
     <string name="settings_licenses_attributions_nuvio_body">Izvorni kôd i uvjeti licenciranja dostupni su u repozitoriju projekta.</string>
     <string name="settings_licenses_attributions_nuvio_license">Licencirano pod licencom GNU General Public License v3.0.</string>
     <string name="settings_licenses_attributions_tmdb_title">The Movie Database (TMDB)</string>
@@ -607,7 +607,7 @@
     <string name="compose_tracking_list_picker_loading">Učitavanje popisa…</string>
     <string name="compose_tracking_list_picker_subtitle">Odaberite gdje želite spremiti ovaj naslov</string>
     <string name="action_donate">Doniraj</string>
-    <string name="action_support_nuvio">Podrži Nuvio</string>
+    <string name="action_support_nuvio">Podrži CINEBOX</string>
     <string name="cw_action_go_to_details">Idi na pojedinosti</string>
     <string name="cw_action_remove">Ukloni</string>
     <string name="cw_action_start_from_beginning">Pokreni od početka</string>
@@ -1005,15 +1005,15 @@
     <string name="settings_notifications_test_requires_saved_show">Prvo spremite seriju u svoju medijateku kako biste testirali obavijesti.</string>
     <string name="settings_notifications_test_title">Probna obavijest</string>
     <string name="community_section_title">Zajednica</string>
-    <string name="community_section_description">Upoznajte ljude koji stvaraju i podržavaju Nuvio na mobilnim uređajima, televizorima i webu.</string>
-    <string name="community_membership_title">Nuvio članstvo podupiratelja</string>
+    <string name="community_section_description">Upoznajte ljude koji stvaraju i podržavaju CINEBOX na mobilnim uređajima, televizorima i webu.</string>
+    <string name="community_membership_title">CINEBOX članstvo podupiratelja</string>
     <string name="community_membership_description">Podrška Nuviju pomaže u pokrivanju infrastrukture i tekućeg razvoja, dok osnovno iskustvo ostaje besplatno za sve.</string>
     <string name="community_view_supporter_membership">Pregledaj članstvo podupiratelja</string>
     <string name="community_membership_you_are">Vi ste</string>
     <string name="community_membership_thank_you">Hvala vam.</string>
     <string name="community_membership_supporter_since">Podupiratelj od %1$s.</string>
     <string name="community_membership_connected_title">Patreon je povezan</string>
-    <string name="community_membership_connected_description">Na ovom Patreon računu nije pronađena aktivna Nuvio razina. Pregledajte dostupne opcije ili osvježite nakon promjene Patreon članstva.</string>
+    <string name="community_membership_connected_description">Na ovom Patreon računu nije pronađena aktivna CINEBOX razina. Pregledajte dostupne opcije ili osvježite nakon promjene Patreon članstva.</string>
     <string name="community_membership_manage">Upravljaj članstvom</string>
     <string name="community_membership_refresh">Osvježi</string>
     <string name="community_membership_refreshing">Osvježavanje</string>

@@ -489,7 +489,7 @@
     <string name="settings_licenses_attributions_section_app">LICENȚĂ APLICAȚIE</string>
     <string name="settings_licenses_attributions_section_data">DATE ȘI SERVICII</string>
     <string name="settings_licenses_attributions_section_playback">LICENȚĂ REDARE</string>
-    <string name="settings_licenses_attributions_nuvio_title">Nuvio Mobile</string>
+    <string name="settings_licenses_attributions_nuvio_title">CINEBOX Mobile</string>
     <string name="settings_licenses_attributions_nuvio_body">Codul sursă și termenii licenței sunt disponibili în depozitul proiectului.</string>
     <string name="settings_licenses_attributions_nuvio_license">Licențiat sub GNU General Public License v3.0.</string>
     <string name="settings_licenses_attributions_tmdb_title">The Movie Database (TMDB)</string>
@@ -818,7 +818,7 @@
     <string name="settings_notifications_test_requires_saved_show">Salvează mai întâi un serial în bibliotecă pentru a testa notificările.</string>
     <string name="settings_notifications_test_title">Notificare de test</string>
     <string name="community_section_title">Comunitate</string>
-    <string name="community_section_description">Vezi persoanele care construiesc și susțin Nuvio pe Mobile, TV și Web.</string>
+    <string name="community_section_description">Vezi persoanele care construiesc și susțin CINEBOX pe Mobile, TV și Web.</string>
     <string name="community_donation_progress_title">Serverul și întreținerea din această lună</string>
     <string name="community_donation_progress_complete">Acoperit. Sprijinul suplimentar merge acum către dezvoltare.</string>
     <string name="community_donation_progress_remaining">După 100%, sprijinul suplimentar merge către dezvoltare.</string>
@@ -1975,7 +1975,7 @@
     <string name="collections_editor_tmdb_without_watch_providers">ID-uri de furnizori de vizionare excluse</string>
     <string name="collections_editor_tmdb_without_watch_providers_helper">Exclude titlurile disponibile la acești furnizori de vizionare TMDB în regiunea selectată.</string>
     <string name="collections_editor_tmdb_without_watch_providers_placeholder">8|337|350</string>
-    <string name="compose_about_based_on_version_format">Bazat pe Nuvio %1$s</string>
+    <string name="compose_about_based_on_version_format">Bazat pe CINEBOX %1$s</string>
     <string name="trailer_enter_fullscreen">Intră în ecran complet</string>
     <string name="trailer_exit_fullscreen">Ieși din ecran complet</string>
     <string name="player_seek_position">Poziția de redare</string>
@@ -2070,7 +2070,7 @@
     <string name="settings_licenses_attributions_mpv_license">Codul sursă și termenii licenței sunt disponibili în depozitul mpv.</string>
     <string name="compose_tracking_list_picker_loading">Se încarcă listele…</string>
     <string name="compose_tracking_list_picker_subtitle">Alege unde să salvezi acest titlu</string>
-    <string name="action_support_nuvio">Susține Nuvio</string>
+    <string name="action_support_nuvio">Susține CINEBOX</string>
     <string name="settings_appearance_app_icon">Pictograma aplicației</string>
     <string name="settings_appearance_app_icon_arctic_blue">Albastru arctic</string>
     <string name="settings_appearance_app_icon_android_confirmation_message">Schimbarea la %1$s cere repornirea CINEBOX. Atinge OK pentru a continua.</string>
@@ -2191,14 +2191,14 @@
     <string name="settings_mdb_show_on_hero_description">Arată notele MDBList în bannerul de pe ecranul principal</string>
     <string name="settings_meta_poster_transition">Tranziția afișului</string>
     <string name="settings_meta_poster_transition_description">Mărește și estompează afișele la deschiderea detaliilor.</string>
-    <string name="community_membership_title">Abonament de susținător Nuvio</string>
-    <string name="community_membership_description">Susținerea Nuvio ajută la acoperirea infrastructurii și a dezvoltării continue, păstrând experiența de bază gratuită pentru toți.</string>
+    <string name="community_membership_title">Abonament de susținător CINEBOX</string>
+    <string name="community_membership_description">Susținerea CINEBOX ajută la acoperirea infrastructurii și a dezvoltării continue, păstrând experiența de bază gratuită pentru toți.</string>
     <string name="community_view_supporter_membership">Vezi abonamentul de susținător</string>
     <string name="community_membership_you_are">Ești un</string>
     <string name="community_membership_thank_you">Mulțumim.</string>
     <string name="community_membership_supporter_since">Susținător din %1$s.</string>
     <string name="community_membership_connected_title">Patreon este conectat</string>
-    <string name="community_membership_connected_description">Nu a fost găsit niciun nivel Nuvio activ pe acest cont Patreon. Vezi opțiunile disponibile sau reîmprospătează după ce îți schimbi abonamentul Patreon.</string>
+    <string name="community_membership_connected_description">Nu a fost găsit niciun nivel CINEBOX activ pe acest cont Patreon. Vezi opțiunile disponibile sau reîmprospătează după ce îți schimbi abonamentul Patreon.</string>
     <string name="community_membership_manage">Gestionează abonamentul</string>
     <string name="community_membership_refresh">Reîmprospătează</string>
     <string name="community_membership_refreshing">Se reîmprospătează</string>

@@ -419,7 +419,7 @@
     <string name="settings_licenses_attributions_section_app">ALKALMAZÁS LICENC</string>
     <string name="settings_licenses_attributions_section_data">ADATOK &amp; SZOLGÁLTATÁSOK</string>
     <string name="settings_licenses_attributions_section_playback">LEJÁTSZÁSI LICENC</string>
-    <string name="settings_licenses_attributions_nuvio_title">Nuvio Mobile</string>
+    <string name="settings_licenses_attributions_nuvio_title">CINEBOX Mobile</string>
     <string name="settings_licenses_attributions_nuvio_body">A forráskód és a licencfeltételek elérhetők a projekt tárolóján (repository).</string>
     <string name="settings_licenses_attributions_nuvio_license">A GNU General Public License v3.0 feltételei szerint licencelve.</string>
     <string name="settings_licenses_attributions_tmdb_title">The Movie Database (TMDB)</string>
@@ -2215,7 +2215,7 @@
     <string name="settings_licenses_attributions_haze_title">Haze 1.7.2</string>
     <string name="settings_licenses_attributions_haze_body">Háttérelmosási effektekhez használva. Készítette: Chris Banes.</string>
     <string name="settings_licenses_attributions_haze_license">Licencelve az Apache Licenc 2.0 verziója alapján.</string>
-    <string name="action_support_nuvio">Nuvio támogatása</string>
+    <string name="action_support_nuvio">CINEBOX támogatása</string>
     <string name="settings_appearance_app_language_restart_title">Újraindítás szükséges</string>
     <string name="settings_appearance_app_language_restart_message">Zárd be és nyisd meg újra az alkalmazást a nyelv elrendezésének frissítéséhez.</string>
     <string name="settings_nav_bar_glow">Üveg ragyogás</string>
@@ -2248,14 +2248,14 @@
     <string name="settings_stream_background_description">Válaszd ki a streamek képernyőjének hátterét.</string>
     <string name="settings_meta_poster_transition">Poszter átmenet</string>
     <string name="settings_meta_poster_transition_description">Poszterek nagyítása és elmosása a részletek megnyitásakor.</string>
-    <string name="community_membership_title">Nuvio Támogatói Tagság</string>
-    <string name="community_membership_description">A Nuvio támogatása segít fedezni az infrastruktúra és a folyamatos fejlesztés költségeit, miközben az alapélmény mindenki számára ingyenes marad.</string>
+    <string name="community_membership_title">CINEBOX Támogatói Tagság</string>
+    <string name="community_membership_description">A CINEBOX támogatása segít fedezni az infrastruktúra és a folyamatos fejlesztés költségeit, miközben az alapélmény mindenki számára ingyenes marad.</string>
     <string name="community_view_supporter_membership">Támogatói tagság megtekintése</string>
     <string name="community_membership_you_are">A státuszod:</string>
     <string name="community_membership_thank_you">Köszönjük!</string>
     <string name="community_membership_supporter_since">Támogató %1$s óta.</string>
     <string name="community_membership_connected_title">A Patreon csatlakoztatva</string>
-    <string name="community_membership_connected_description">Nem található aktív Nuvio szint ezen a Patreon fiókon. Tekintsd meg az elérhető opciókat, vagy frissíts a Patreon tagság megváltoztatása után.</string>
+    <string name="community_membership_connected_description">Nem található aktív CINEBOX szint ezen a Patreon fiókon. Tekintsd meg az elérhető opciókat, vagy frissíts a Patreon tagság megváltoztatása után.</string>
     <string name="community_membership_manage">Tagság kezelése</string>
     <string name="community_membership_refresh">Frissítés</string>
     <string name="community_membership_refreshing">Frissítés...</string>

@@ -582,7 +582,7 @@
     <string name="settings_licenses_attributions_haze_title">Haze 1.7.2</string>
     <string name="settings_licenses_attributions_haze_body">Usado para efeitos de desfoque de fundo. Criado por Chris Banes.</string>
     <string name="settings_licenses_attributions_haze_license">Licenciado sob a Licença Apache, Versão 2.0.</string>
-    <string name="settings_licenses_attributions_nuvio_title">Nuvio Mobile</string>
+    <string name="settings_licenses_attributions_nuvio_title">CINEBOX Mobile</string>
     <string name="settings_licenses_attributions_nuvio_body">Código-fonte e termos de licença estão disponíveis no repositório do projeto.</string>
     <string name="settings_licenses_attributions_nuvio_license">Licenciado sob a GNU General Public License v3.0.</string>
     <string name="settings_licenses_attributions_tmdb_title">The Movie Database (TMDB)</string>
@@ -612,7 +612,7 @@
     <string name="compose_tracking_list_picker_loading">Carregando listas…</string>
     <string name="compose_tracking_list_picker_subtitle">Escolha onde salvar este título</string>
     <string name="action_donate">Doar</string>
-    <string name="action_support_nuvio">Apoiar o Nuvio</string>
+    <string name="action_support_nuvio">Apoiar o CINEBOX</string>
     <string name="cw_action_go_to_details">Ir para detalhes</string>
     <string name="cw_action_remove">Remover</string>
     <string name="cw_action_start_from_beginning">Começar do início</string>
@@ -1010,15 +1010,15 @@
     <string name="settings_notifications_test_requires_saved_show">Salve uma série na sua biblioteca primeiro para testar notificações.</string>
     <string name="settings_notifications_test_title">Notificação de teste</string>
     <string name="community_section_title">Comunidade</string>
-    <string name="community_section_description">Veja as pessoas que constroem e apoiam o Nuvio em Mobile, TV e Web.</string>
-    <string name="community_membership_title">Assinatura de Apoiador do Nuvio</string>
-    <string name="community_membership_description">Apoiar o Nuvio ajuda a cobrir custos de infraestrutura e o desenvolvimento contínuo, mantendo a experiência principal gratuita para todos.</string>
+    <string name="community_section_description">Veja as pessoas que constroem e apoiam o CINEBOX em Mobile, TV e Web.</string>
+    <string name="community_membership_title">Assinatura de Apoiador do CINEBOX</string>
+    <string name="community_membership_description">Apoiar o CINEBOX ajuda a cobrir custos de infraestrutura e o desenvolvimento contínuo, mantendo a experiência principal gratuita para todos.</string>
     <string name="community_view_supporter_membership">Ver assinatura de apoiador</string>
     <string name="community_membership_you_are">Você é um</string>
     <string name="community_membership_thank_you">Obrigado.</string>
     <string name="community_membership_supporter_since">Apoiador desde %1$s.</string>
     <string name="community_membership_connected_title">Patreon conectado</string>
-    <string name="community_membership_connected_description">Nenhum nível ativo do Nuvio foi encontrado nesta conta do Patreon. Veja as opções disponíveis ou atualize após alterar sua assinatura no Patreon.</string>
+    <string name="community_membership_connected_description">Nenhum nível ativo do CINEBOX foi encontrado nesta conta do Patreon. Veja as opções disponíveis ou atualize após alterar sua assinatura no Patreon.</string>
     <string name="community_membership_manage">Gerenciar assinatura</string>
     <string name="community_membership_refresh">Atualizar</string>
     <string name="community_membership_refreshing">Atualizando…</string>

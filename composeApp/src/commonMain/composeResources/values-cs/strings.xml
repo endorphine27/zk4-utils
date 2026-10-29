@@ -471,7 +471,7 @@
     <string name="settings_licenses_attributions_section_app">LICENCE APLIKACE</string>
     <string name="settings_licenses_attributions_section_data">DATA &amp; SLUŽBY</string>
     <string name="settings_licenses_attributions_section_playback">LICENCE PŘEHRÁVÁNÍ</string>
-    <string name="settings_licenses_attributions_nuvio_title">Nuvio Mobile</string>
+    <string name="settings_licenses_attributions_nuvio_title">CINEBOX Mobile</string>
     <string name="settings_licenses_attributions_nuvio_body">Zdrojový kód a licenční podmínky jsou dostupné v repozitáři projektu.</string>
     <string name="settings_licenses_attributions_nuvio_license">Licencováno pod GNU General Public License v3.0.</string>
     <string name="settings_licenses_attributions_tmdb_title">The Movie Database (TMDB)</string>
@@ -790,7 +790,7 @@
     <string name="settings_notifications_test_requires_saved_show">Abyste mohli otestovat oznámení, uložte si nejprve nějaký pořad do knihovny.</string>
     <string name="settings_notifications_test_title">Zkušební oznámení</string>
     <string name="community_section_title">Komunita</string>
-    <string name="community_section_description">Podívejte se na lidi, kteří tvoří a podporují Nuvio na Mobilech, TV a Webu.</string>
+    <string name="community_section_description">Podívejte se na lidi, kteří tvoří a podporují CINEBOX na Mobilech, TV a Webu.</string>
     <string name="community_donation_progress_title">Tento měsíc za servery a údržbu</string>
     <string name="community_donation_progress_complete">Pokryto. Dodatečná podpora nyní půjde na vývoj.</string>
     <string name="community_donation_progress_remaining">Po dosažení 100% půjde další podpora na vývoj.</string>
@@ -2016,7 +2016,7 @@
     <string name="settings_licenses_attributions_simkl_body">CINEBOX se připojuje k Simkl kvůli ověření účtu, seznamům ke zhlédnutí, historii sledování, průběhu přehrávání a scrobblingu. Data o sledování filmů, seriálů a anime poskytuje Simkl. CINEBOX není se Simkl spojeno ani jím podporováno.</string>
     <string name="compose_tracking_list_picker_loading">Načítání seznamů…</string>
     <string name="compose_tracking_list_picker_subtitle">Vyberte, kam tento titul uložit</string>
-    <string name="action_support_nuvio">Podpořit Nuvio</string>
+    <string name="action_support_nuvio">Podpořit CINEBOX</string>
     <string name="downloads_open_directory">Otevřít složku se staženými soubory</string>
     <string name="downloads_open_directory_failed">Složku se staženými soubory se nepodařilo otevřít</string>
     <string name="settings_appearance_app_icon">Ikona aplikace</string>
@@ -2083,7 +2083,7 @@
     <string name="settings_meta_background_mode_cinematic_description">Zobrazit za stránkou jemně rozmazané pozadí.</string>
     <string name="settings_meta_background_mode_dominant">Dominantní barva</string>
     <string name="settings_meta_background_mode_dominant_description">Přizpůsobit pozadí stránky hlavní barvě obrázku na pozadí.</string>
-    <string name="community_membership_title">Členství podporovatele Nuvio</string>
+    <string name="community_membership_title">Členství podporovatele CINEBOX</string>
     <string name="community_membership_description">Podpora Nuvia pomáhá pokrýt infrastrukturu a průběžný vývoj a zároveň zachovat základní funkce zdarma pro všechny.</string>
     <string name="community_view_supporter_membership">Zobrazit členství podporovatele</string>
     <string name="community_membership_you_are">Jste</string>

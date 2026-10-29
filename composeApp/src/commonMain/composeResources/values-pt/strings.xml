@@ -470,7 +470,7 @@
     <string name="settings_licenses_attributions_section_app">LICENÇA DA APP</string>
     <string name="settings_licenses_attributions_section_data">DADOS E SERVIÇOS</string>
     <string name="settings_licenses_attributions_section_playback">LICENÇA DE REPRODUÇÃO</string>
-    <string name="settings_licenses_attributions_nuvio_title">Nuvio Mobile</string>
+    <string name="settings_licenses_attributions_nuvio_title">CINEBOX Mobile</string>
     <string name="settings_licenses_attributions_nuvio_body">O código-fonte e os termos de licença estão disponíveis no repositório do projeto.</string>
     <string name="settings_licenses_attributions_nuvio_license">Licenciado sob a GNU General Public License v3.0.</string>
     <string name="settings_licenses_attributions_tmdb_title">The Movie Database (TMDB)</string>
@@ -784,7 +784,7 @@
     <string name="settings_notifications_test_requires_saved_show">Guarda primeiro uma série na tua biblioteca para poderes testar as notificações.</string>
     <string name="settings_notifications_test_title">Notificação de teste</string>
     <string name="community_section_title">Comunidade</string>
-    <string name="community_section_description">Vê as pessoas que constroem e apoiam o Nuvio em versões Mobile, TV e Web.</string>
+    <string name="community_section_description">Vê as pessoas que constroem e apoiam o CINEBOX em versões Mobile, TV e Web.</string>
     <string name="community_supporters_not_configured">A API de Apoiantes não está configurada. Adiciona DONATIONS_BASE_URL ao local.properties.</string>
     <string name="community_tab_contributors">Colaboradores</string>
     <string name="community_tab_supporters">Apoiantes</string>

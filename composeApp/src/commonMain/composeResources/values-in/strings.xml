@@ -437,7 +437,7 @@
     <string name="settings_licenses_attributions_section_app">LISENSI APLIKASI</string>
     <string name="settings_licenses_attributions_section_data">DATA &amp; LAYANAN</string>
     <string name="settings_licenses_attributions_section_playback">LISENSI PEMUTARAN</string>
-    <string name="settings_licenses_attributions_nuvio_title">Nuvio Mobile</string>
+    <string name="settings_licenses_attributions_nuvio_title">CINEBOX Mobile</string>
     <string name="settings_licenses_attributions_nuvio_body">Kode sumber dan ketentuan lisensi tersedia di repositori proyek.</string>
     <string name="settings_licenses_attributions_nuvio_license">Dilisensikan di bawah GNU General Public License v3.0.</string>
     <string name="settings_licenses_attributions_tmdb_title">The Movie Database (TMDB)</string>
@@ -719,7 +719,7 @@
     <string name="settings_notifications_test_requires_saved_show">Simpan serial ke pustaka Anda terlebih dahulu untuk menguji notifikasi.</string>
     <string name="settings_notifications_test_title">Notifikasi uji coba</string>
     <string name="community_section_title">Komunitas</string>
-    <string name="community_section_description">Lihat orang-orang yang membangun dan mendukung Nuvio di Mobile, TV, dan Web.</string>
+    <string name="community_section_description">Lihat orang-orang yang membangun dan mendukung CINEBOX di Mobile, TV, dan Web.</string>
     <string name="community_supporters_not_configured">API Donatur tidak dikonfigurasi. Tambahkan DONATIONS_BASE_URL ke local.properties.</string>
     <string name="community_tab_contributors">Kontributor</string>
     <string name="community_tab_supporters">Donatur</string>

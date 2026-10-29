@@ -507,7 +507,7 @@
     <string name="settings_licenses_attributions_section_app">ترخيص التطبيق</string>
     <string name="settings_licenses_attributions_section_data">البيانات والخدمات</string>
     <string name="settings_licenses_attributions_section_playback">ترخيص التشغيل</string>
-    <string name="settings_licenses_attributions_nuvio_title">Nuvio Mobile</string>
+    <string name="settings_licenses_attributions_nuvio_title">CINEBOX Mobile</string>
     <string name="settings_licenses_attributions_nuvio_body">يتوفر الكود المصدري وشروط الترخيص في مستودع المشروع.</string>
     <string name="settings_licenses_attributions_nuvio_license">مرخّص بموجب رخصة GNU العامة الإصدار 3.0.</string>
     <string name="settings_licenses_attributions_tmdb_title">The Movie Database (TMDB)</string>
@@ -893,7 +893,7 @@
     <string name="settings_notifications_test_requires_saved_show">احفظ مسلسلًا في مكتبتك أولًا لاختبار الإشعارات.</string>
     <string name="settings_notifications_test_title">إشعار تجريبي</string>
     <string name="community_section_title">المجتمع</string>
-    <string name="community_section_description">تعرّف على الأشخاص الذين يطوّرون Nuvio ويدعمونه على الهاتف والتلفاز والويب.</string>
+    <string name="community_section_description">تعرّف على الأشخاص الذين يطوّرون CINEBOX ويدعمونه على الهاتف والتلفاز والويب.</string>
     <string name="community_donation_progress_title">خوادم هذا الشهر والصيانة</string>
     <string name="community_donation_progress_complete">تمت التغطية. يذهب الدعم الإضافي الآن إلى التطوير.</string>
     <string name="community_donation_progress_remaining">بعد الوصول إلى 100%، يذهب الدعم الإضافي إلى التطوير.</string>

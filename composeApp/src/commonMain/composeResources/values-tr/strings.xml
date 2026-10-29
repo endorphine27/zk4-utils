@@ -494,7 +494,7 @@
     <string name="settings_licenses_attributions_section_app">UYGULAMA LİSANSI</string>
     <string name="settings_licenses_attributions_section_data">VERİ &amp; SERVİSLER</string>
     <string name="settings_licenses_attributions_section_playback">OYNATMA LİSANSI</string>
-    <string name="settings_licenses_attributions_nuvio_title">Nuvio Mobil</string>
+    <string name="settings_licenses_attributions_nuvio_title">CINEBOX Mobil</string>
     <string name="settings_licenses_attributions_nuvio_body">Kaynak kodları ve lisans koşulları proje deposunda bulunabilir.</string>
     <string name="settings_licenses_attributions_nuvio_license">GNU Genel Kamu Lisansı v3.0 kapsamında lisanslanmıştır.</string>
     <string name="settings_licenses_attributions_tmdb_title">The Movie Database (TMDB)</string>
@@ -880,7 +880,7 @@
     <string name="settings_notifications_test_requires_saved_show">Bildirimleri test etmek için önce kitaplığına bir dizi kaydet.</string>
     <string name="settings_notifications_test_title">Test bildirimi</string>
     <string name="community_section_title">Topluluk</string>
-    <string name="community_section_description">Nuvio'yu Mobile, TV ve Web'de geliştiren ve destekleyen kişileri gör.</string>
+    <string name="community_section_description">CINEBOX'yu Mobile, TV ve Web'de geliştiren ve destekleyen kişileri gör.</string>
     <string name="community_donation_progress_title">Bu ayın sunucu ve bakım giderleri</string>
     <string name="community_donation_progress_complete">Karşılandı. Ek destekler artık geliştirmeye aktarılıyor.</string>
     <string name="community_donation_progress_remaining">%100'ün ardından ek destek geliştirmeye aktarılır.</string>

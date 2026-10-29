@@ -569,7 +569,7 @@
     <string name="settings_licenses_attributions_section_app">ЛИЦЕНЗ НА ПРИЛОЖЕНИЕТО</string>
     <string name="settings_licenses_attributions_section_data">ДАННИ И УСЛУГИ</string>
     <string name="settings_licenses_attributions_section_playback">ЛИЦЕНЗ ЗА ВЪЗПРОИЗВЕЖДАНЕ</string>
-    <string name="settings_licenses_attributions_nuvio_title">Nuvio Mobile</string>
+    <string name="settings_licenses_attributions_nuvio_title">CINEBOX Mobile</string>
     <string name="settings_licenses_attributions_nuvio_body">Изходният код и условията на лиценза са достъпни в хранилището на проекта.</string>
     <string name="settings_licenses_attributions_nuvio_license">Лицензиран под GNU General Public License v3.0.</string>
     <string name="settings_licenses_attributions_tmdb_title">The Movie Database (TMDB)</string>
@@ -599,7 +599,7 @@
     <string name="compose_tracking_list_picker_loading">Зареждане на списъци…</string>
     <string name="compose_tracking_list_picker_subtitle">Изберете къде да се запази това заглавие</string>
     <string name="action_donate">Дарете</string>
-    <string name="action_support_nuvio">Подкрепете Nuvio</string>
+    <string name="action_support_nuvio">Подкрепете CINEBOX</string>
     <string name="cw_action_go_to_details">Отиди към детайлите</string>
     <string name="cw_action_remove">Премахни</string>
     <string name="cw_action_start_from_beginning">Започни от началото</string>
@@ -957,15 +957,15 @@
     <string name="settings_notifications_test_requires_saved_show">Запазете сериал в библиотеката си, преди да тествате известията.</string>
     <string name="settings_notifications_test_title">Тестово известие</string>
     <string name="community_section_title">Общност</string>
-    <string name="community_section_description">Вижте хората, изграждащи и поддържащи Nuvio за Mobile, TV и Web.</string>
-    <string name="community_membership_title">Членство „Поддръжник“ в Nuvio</string>
-    <string name="community_membership_description">Подкрепата за Nuvio помага за покриване на разходите за инфраструктура и текущо развитие, като в същото време основното ползване остава безплатно за всички.</string>
+    <string name="community_section_description">Вижте хората, изграждащи и поддържащи CINEBOX за Mobile, TV и Web.</string>
+    <string name="community_membership_title">Членство „Поддръжник“ в CINEBOX</string>
+    <string name="community_membership_description">Подкрепата за CINEBOX помага за покриване на разходите за инфраструктура и текущо развитие, като в същото време основното ползване остава безплатно за всички.</string>
     <string name="community_view_supporter_membership">Преглед на членството „Поддръжник“</string>
     <string name="community_membership_you_are">Вие сте</string>
     <string name="community_membership_thank_you">Благодарим Ви.</string>
     <string name="community_membership_supporter_since">Поддръжник от %1$s.</string>
     <string name="community_membership_connected_title">Patreon е свързан</string>
-    <string name="community_membership_connected_description">Не беше открит активен план на Nuvio в този акаунт в Patreon. Прегледайте наличните опции или обновете страницата, след като промените членството си в Patreon.</string>
+    <string name="community_membership_connected_description">Не беше открит активен план на CINEBOX в този акаунт в Patreon. Прегледайте наличните опции или обновете страницата, след като промените членството си в Patreon.</string>
     <string name="community_membership_manage">Управление на членството</string>
     <string name="community_membership_refresh">Опресняване</string>
     <string name="community_membership_refreshing">Опреснява се</string>

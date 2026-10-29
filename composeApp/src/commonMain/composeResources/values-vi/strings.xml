@@ -577,7 +577,7 @@
     <string name="settings_licenses_attributions_haze_title">Haze 1.7.2</string>
     <string name="settings_licenses_attributions_haze_body">Dùng cho hiệu ứng làm mờ ảnh nền. Được tạo bởi Chris Banes.</string>
     <string name="settings_licenses_attributions_haze_license">Được cấp phép theo Giấy phép Apache, Phiên bản 2.0.</string>
-    <string name="settings_licenses_attributions_nuvio_title">Nuvio Mobile</string>
+    <string name="settings_licenses_attributions_nuvio_title">CINEBOX Mobile</string>
     <string name="settings_licenses_attributions_nuvio_body">Mã nguồn và điều khoản cấp phép có trong kho lưu trữ của dự án</string>
     <string name="settings_licenses_attributions_nuvio_license">Cấp phép theo GNU General Public License v3.0</string>
     <string name="settings_licenses_attributions_tmdb_title">The Movie Database (TMDB)</string>
@@ -607,7 +607,7 @@
     <string name="compose_tracking_list_picker_loading">Đang tải danh sách…</string>
     <string name="compose_tracking_list_picker_subtitle">Chọn nơi để lưu nội dung này.</string>
     <string name="action_donate">Ủng hộ</string>
-    <string name="action_support_nuvio">Tài trợ Nuvio</string>
+    <string name="action_support_nuvio">Tài trợ CINEBOX</string>
     <string name="cw_action_go_to_details">Xem chi tiết</string>
     <string name="cw_action_remove">Xóa</string>
     <string name="cw_action_start_from_beginning">Xem từ đầu</string>
@@ -1005,15 +1005,15 @@
     <string name="settings_notifications_test_requires_saved_show">Vui lòng lưu chương trình vào thư viện trước để kiểm tra thông báo</string>
     <string name="settings_notifications_test_title">Thông báo kiểm tra</string>
     <string name="community_section_title">Cộng đồng</string>
-    <string name="community_section_description">Gặp gỡ đội ngũ phát triển và tài trợ Nuvio trên Mobile, TV và Web</string>
-    <string name="community_membership_title">Gói thành viên Người tài trợ Nuvio</string>
-    <string name="community_membership_description">Việc tài trợ Nuvio giúp chi trả cho cơ sở hạ tầng và hoạt động phát triển liên tục, đồng thời duy trì trải nghiệm cốt lõi miễn phí cho mọi người.</string>
+    <string name="community_section_description">Gặp gỡ đội ngũ phát triển và tài trợ CINEBOX trên Mobile, TV và Web</string>
+    <string name="community_membership_title">Gói thành viên Người tài trợ CINEBOX</string>
+    <string name="community_membership_description">Việc tài trợ CINEBOX giúp chi trả cho cơ sở hạ tầng và hoạt động phát triển liên tục, đồng thời duy trì trải nghiệm cốt lõi miễn phí cho mọi người.</string>
     <string name="community_view_supporter_membership">Xem Gói thành viên Người tài trợ</string>
     <string name="community_membership_you_are">Bạn là một</string>
     <string name="community_membership_thank_you">Cảm ơn.</string>
     <string name="community_membership_supporter_since">Người tài trợ từ %1$s.</string>
     <string name="community_membership_connected_title">Patreon đã được kết nối</string>
-    <string name="community_membership_connected_description">Không tìm thấy gói Nuvio đang hoạt động nào trên tài khoản Patreon này. Vui lòng xem các tùy chọn hiện có hoặc làm mới sau khi thay đổi gói thành viên Patreon.</string>
+    <string name="community_membership_connected_description">Không tìm thấy gói CINEBOX đang hoạt động nào trên tài khoản Patreon này. Vui lòng xem các tùy chọn hiện có hoặc làm mới sau khi thay đổi gói thành viên Patreon.</string>
     <string name="community_membership_manage">Quản lý gói thành viên</string>
     <string name="community_membership_refresh">Làm mới</string>
     <string name="community_membership_refreshing">Đang làm mới</string>

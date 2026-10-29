@@ -578,7 +578,7 @@
     <string name="settings_licenses_attributions_haze_title">Haze 1.7.2</string>
     <string name="settings_licenses_attributions_haze_body">ব্যাকগ্রাউন্ড ব্লার ইফেক্টের জন্য ব্যবহার করা হয়। ক্রিস ব্যানস দ্বারা নির্মিত।</string>
     <string name="settings_licenses_attributions_haze_license">Apache লাইসেন্সের অধীনে লাইসেন্সকৃত, সংস্করণ 2.0।</string>
-    <string name="settings_licenses_attributions_nuvio_title">Nuvio মোবাইল</string>
+    <string name="settings_licenses_attributions_nuvio_title">CINEBOX মোবাইল</string>
     <string name="settings_licenses_attributions_nuvio_body">সোর্স কোড এবং লাইসেন্সের শর্তাবলী প্রকল্পের রিপোজিটরিতে উপলব্ধ।</string>
     <string name="settings_licenses_attributions_nuvio_license">GNU জেনারেল পাবলিক লাইসেন্স v3.0-এর অধীনে লাইসেন্সপ্রাপ্ত।</string>
     <string name="settings_licenses_attributions_tmdb_title">The Movie Database (TMDB)</string>
@@ -996,15 +996,15 @@
     <string name="settings_notifications_test_requires_saved_show">বিজ্ঞপ্তি পরীক্ষা করার জন্য প্রথমে আপনার লাইব্রেরিতে একটি শো সেভ করুন।</string>
     <string name="settings_notifications_test_title">পরীক্ষামূলক বিজ্ঞপ্তি</string>
     <string name="community_section_title">সম্প্রদায়</string>
-    <string name="community_section_description">মোবাইল, টিভি এবং ওয়েব জুড়ে Nuvio তৈরি এবং সমর্থনকারী লোকেদের দেখুন।</string>
-    <string name="community_membership_title">Nuvio সমর্থক মেম্বারশিপ</string>
+    <string name="community_section_description">মোবাইল, টিভি এবং ওয়েব জুড়ে CINEBOX তৈরি এবং সমর্থনকারী লোকেদের দেখুন।</string>
+    <string name="community_membership_title">CINEBOX সমর্থক মেম্বারশিপ</string>
     <string name="community_membership_description">Nuvio-কে সাপোর্ট করলে পরিকাঠামো এবং চলমান উন্নয়নের খরচ মেটাতে সাহায্য হয় এবং মূল অভিজ্ঞতা সবার জন্য বিনামূল্যে রাখা যায়।</string>
     <string name="community_view_supporter_membership">সমর্থক মেম্বারশিপ দেখুন</string>
     <string name="community_membership_you_are">আপনি একজন</string>
     <string name="community_membership_thank_you">ধন্যবাদ।</string>
     <string name="community_membership_supporter_since">%1$s থেকে সমর্থক।</string>
     <string name="community_membership_connected_title">Patreon সংযুক্ত আছে</string>
-    <string name="community_membership_connected_description">এই Patreon অ্যাকাউন্টে কোনো সক্রিয় Nuvio স্তর পাওয়া যায়নি। উপলব্ধ বিকল্পগুলো দেখুন বা আপনার Patreon মেম্বারশিপ পরিবর্তন করার পরে রিফ্রেশ করুন।</string>
+    <string name="community_membership_connected_description">এই Patreon অ্যাকাউন্টে কোনো সক্রিয় CINEBOX স্তর পাওয়া যায়নি। উপলব্ধ বিকল্পগুলো দেখুন বা আপনার Patreon মেম্বারশিপ পরিবর্তন করার পরে রিফ্রেশ করুন।</string>
     <string name="community_membership_manage">মেম্বারশিপ ম্যানেজ করুন</string>
     <string name="community_membership_refresh">রিফ্রেশ</string>
     <string name="community_membership_refreshing">রিফ্রেশিং</string>

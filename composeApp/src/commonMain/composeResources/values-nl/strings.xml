@@ -569,7 +569,7 @@
     <string name="settings_licenses_attributions_section_app">APP-LICENTIE</string>
     <string name="settings_licenses_attributions_section_data">GEGEVENS EN SERVICES</string>
     <string name="settings_licenses_attributions_section_playback">AFSPEELLICENTIE</string>
-    <string name="settings_licenses_attributions_nuvio_title">Nuvio Mobile</string>
+    <string name="settings_licenses_attributions_nuvio_title">CINEBOX Mobile</string>
     <string name="settings_licenses_attributions_nuvio_body">Broncode en licentievoorwaarden zijn beschikbaar in de projectrepository.</string>
     <string name="settings_licenses_attributions_nuvio_license">Uitgebracht onder de GNU General Public License v3.0.</string>
     <string name="settings_licenses_attributions_tmdb_title">The Movie Database (TMDB)</string>
@@ -599,7 +599,7 @@
     <string name="compose_tracking_list_picker_loading">Lijsten laden...</string>
     <string name="compose_tracking_list_picker_subtitle">Kies waar je deze titel wilt opslaan</string>
     <string name="action_donate">Doneren</string>
-    <string name="action_support_nuvio">Steun Nuvio</string>
+    <string name="action_support_nuvio">Steun CINEBOX</string>
     <string name="cw_action_go_to_details">Ga naar details</string>
     <string name="cw_action_remove">Verwijderen</string>
     <string name="cw_action_start_from_beginning">Vanaf het begin starten</string>
@@ -957,9 +957,9 @@
     <string name="settings_notifications_test_requires_saved_show">Sla eerst een serie op in je bibliotheek om meldingen te testen.</string>
     <string name="settings_notifications_test_title">Testmelding</string>
     <string name="community_section_title">Community</string>
-    <string name="community_section_description">Bekijk de mensen die Nuvio bouwen en ondersteunen op Mobiel, TV en Web.</string>
+    <string name="community_section_description">Bekijk de mensen die CINEBOX bouwen en ondersteunen op Mobiel, TV en Web.</string>
     <string name="community_membership_title">Nuvio-ondersteunerslidmaatschap</string>
-    <string name="community_membership_description">Nuvio steunen helpt de infrastructuur en doorlopende ontwikkeling te dekken, terwijl de kernervaring gratis blijft voor iedereen.</string>
+    <string name="community_membership_description">CINEBOX steunen helpt de infrastructuur en doorlopende ontwikkeling te dekken, terwijl de kernervaring gratis blijft voor iedereen.</string>
     <string name="community_view_supporter_membership">Ondersteunerslidmaatschap bekijken</string>
     <string name="community_membership_you_are">Je bent een</string>
     <string name="community_membership_thank_you">Bedankt.</string>

@@ -437,7 +437,7 @@
     <string name="settings_licenses_attributions_section_app">LICENCJA APLIKACJI</string>
     <string name="settings_licenses_attributions_section_data">DANE I USŁUGI</string>
     <string name="settings_licenses_attributions_section_playback">LICENCJA ODTWARZANIA</string>
-    <string name="settings_licenses_attributions_nuvio_title">Nuvio Mobile</string>
+    <string name="settings_licenses_attributions_nuvio_title">CINEBOX Mobile</string>
     <string name="settings_licenses_attributions_nuvio_body">Kod źródłowy i warunki licencji są dostępne w repozytorium projektu.</string>
     <string name="settings_licenses_attributions_nuvio_license">Licencjonowany na podstawie GNU General Public License v3.0.</string>
     <string name="settings_licenses_attributions_tmdb_title">The Movie Database (TMDB)</string>
@@ -740,7 +740,7 @@
     <string name="settings_notifications_test_requires_saved_show">Najpierw zapisz serial w bibliotece, aby przetestować powiadomienia.</string>
     <string name="settings_notifications_test_title">Powiadomienie testowe</string>
     <string name="community_section_title">Społeczność</string>
-    <string name="community_section_description">Zobacz osoby budujące i wspierające Nuvio na urządzeniach mobilnych, TV i w sieci.</string>
+    <string name="community_section_description">Zobacz osoby budujące i wspierające CINEBOX na urządzeniach mobilnych, TV i w sieci.</string>
     <string name="community_supporters_not_configured">API wspierających nie jest skonfigurowane. Dodaj DONATIONS_BASE_URL do local.properties.</string>
     <string name="community_tab_contributors">Współtwórcy</string>
     <string name="community_tab_supporters">Wspierający</string>
@@ -2017,7 +2017,7 @@
     <string name="action_delete_confirm_message">Czy na pewno chcesz to usunąć?</string>
     <string name="action_delete_confirm_title">Usunąć?</string>
     <string name="action_remove_anyway">Usuń mimo to</string>
-    <string name="action_support_nuvio">Wesprzyj Nuvio</string>
+    <string name="action_support_nuvio">Wesprzyj CINEBOX</string>
     <string name="addons_delete_confirm_title">Usunąć dodatek?</string>
     <string name="collections_copy_json_error">Dane kolekcji są zbyt duże dla schowka na tym urządzeniu.</string>
     <string name="collections_editor_tmdb_without_genres">Wykluczone ID gatunków</string>
@@ -2127,14 +2127,14 @@
     <string name="settings_stream_background_description">Wybierz tło ekranu źródeł.</string>
     <string name="settings_meta_poster_transition">Animacja plakatów</string>
     <string name="settings_meta_poster_transition_description">Rozwijaj i rozmywaj plakaty przy otwieraniu szczegółów.</string>
-    <string name="community_membership_title">Członkostwo Nuvio Supporter</string>
-    <string name="community_membership_description">Wspieranie Nuvio pokrywa koszty infrastruktury i bieżącego rozwoju, zachowując podstawowe funkcje bezpłatne dla wszystkich.</string>
+    <string name="community_membership_title">Członkostwo CINEBOX Supporter</string>
+    <string name="community_membership_description">Wspieranie CINEBOX pokrywa koszty infrastruktury i bieżącego rozwoju, zachowując podstawowe funkcje bezpłatne dla wszystkich.</string>
     <string name="community_view_supporter_membership">Zobacz członkostwo Supporter</string>
     <string name="community_membership_you_are">Jesteś</string>
     <string name="community_membership_thank_you">Dziękujemy.</string>
     <string name="community_membership_supporter_since">Supporter od %1$s.</string>
     <string name="community_membership_connected_title">Patreon jest połączony</string>
-    <string name="community_membership_connected_description">Nie znaleziono aktywnego poziomu Nuvio na tym koncie Patreon. Zobacz dostępne opcje lub odśwież po zmianie członkostwa.</string>
+    <string name="community_membership_connected_description">Nie znaleziono aktywnego poziomu CINEBOX na tym koncie Patreon. Zobacz dostępne opcje lub odśwież po zmianie członkostwa.</string>
     <string name="community_membership_manage">Zarządzaj członkostwem</string>
     <string name="community_membership_refresh">Odśwież</string>
     <string name="community_membership_refreshing">Odświeżanie</string>

@@ -460,7 +460,7 @@
   <string name="settings_notifications_test_requires_saved_show">Salva prima una serie nella tua libreria per testare le notifiche.</string>
   <string name="settings_notifications_test_title">Notifica di test</string>
   <string name="community_section_title">Comunità</string>
-  <string name="community_section_description">Scopri le persone che sviluppano e supportano Nuvio su Mobile, TV e Web.</string>
+  <string name="community_section_description">Scopri le persone che sviluppano e supportano CINEBOX su Mobile, TV e Web.</string>
   <string name="community_supporters_not_configured">L'API dei sostenitori non è configurata. Aggiungi DONATIONS_BASE_URL a local.properties.</string>
   <string name="community_tab_contributors">Collaboratori</string>
   <string name="community_tab_supporters">Sostenitori</string>
@@ -1283,7 +1283,7 @@
   <string name="settings_licenses_attributions_section_app">LICENZA APP</string>
   <string name="settings_licenses_attributions_section_data">DATI E SERVIZI</string>
   <string name="settings_licenses_attributions_section_playback">LICENZA RIPRODUZIONE</string>
-  <string name="settings_licenses_attributions_nuvio_title">Nuvio Mobile</string>
+  <string name="settings_licenses_attributions_nuvio_title">CINEBOX Mobile</string>
   <string name="settings_licenses_attributions_nuvio_body">Il codice sorgente e i termini di licenza sono disponibili nel repository del progetto.</string>
   <string name="settings_licenses_attributions_nuvio_license">Rilasciato sotto licenza GNU General Public License v3.0.</string>
   <string name="settings_licenses_attributions_tmdb_title">The Movie Database (TMDB)</string>
@@ -2102,12 +2102,12 @@
     <string name="settings_content_discovery_section_search">Cerca</string>
     <string name="settings_content_discovery_recent_searches">Ricerche recenti</string>
     <string name="settings_stream_background_title">Sfondo</string>
-    <string name="community_membership_title">Iscrizione Supporter di Nuvio</string>
-    <string name="community_membership_description">Sostenere Nuvio aiuta a coprire l'infrastruttura e lo sviluppo continuo, mantenendo l'esperienza principale gratuita per tutti.</string>
+    <string name="community_membership_title">Iscrizione Supporter di CINEBOX</string>
+    <string name="community_membership_description">Sostenere CINEBOX aiuta a coprire l'infrastruttura e lo sviluppo continuo, mantenendo l'esperienza principale gratuita per tutti.</string>
     <string name="community_membership_thank_you">Grazie.</string>
     <string name="community_membership_supporter_since">Supporter dal %1$s.</string>
     <string name="community_membership_connected_title">Patreon è connesso</string>
-    <string name="community_membership_connected_description">Nessun livello Nuvio attivo trovato su questo account Patreon. Visualizza le opzioni disponibili o aggiorna dopo aver modificato la tua iscrizione Patreon.</string>
+    <string name="community_membership_connected_description">Nessun livello CINEBOX attivo trovato su questo account Patreon. Visualizza le opzioni disponibili o aggiorna dopo aver modificato la tua iscrizione Patreon.</string>
     <string name="community_membership_manage">Gestisci iscrizione</string>
     <string name="community_membership_refreshing">Aggiornamento in corso</string>
     <string name="community_membership_unable_load">Impossibile caricare lo stato dell'iscrizione. Riprova.</string>
@@ -2292,7 +2292,7 @@
     <string name="settings_licenses_attributions_simkl_body">CINEBOX si collega a Simkl per l'autenticazione dell'account, le watchlist, la cronologia di visione, i progressi di riproduzione e lo scrobbling. Simkl fornisce dati di tracciamento per film, serie TV e anime. CINEBOX non è affiliato a Simkl né approvato da Simkl.</string>
     <string name="compose_tracking_list_picker_loading">Caricamento delle liste…</string>
     <string name="compose_tracking_list_picker_subtitle">Scegli dove salvare questo titolo</string>
-    <string name="action_support_nuvio">Sostieni Nuvio</string>
+    <string name="action_support_nuvio">Sostieni CINEBOX</string>
     <string name="settings_appearance_app_icon">Icona app</string>
     <string name="settings_appearance_app_icon_android_confirmation_message">Passando a %1$s, CINEBOX si chiuderà. Tocca OK per continuare.</string>
     <string name="settings_appearance_app_icon_change_failed">Impossibile cambiare l'icona. Riprova.</string>

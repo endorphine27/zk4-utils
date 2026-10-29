@@ -338,7 +338,7 @@
     <string name="collections_pinned">Pinned</string>
     <string name="collections_tab_all">All</string>
     <string name="collections_your_collections">Your Collections</string>
-    <string name="compose_about_based_on_version_format">Based on Nuvio %1$s</string>
+    <string name="compose_about_based_on_version_format">Based on CINEBOX %1$s</string>
     <string name="compose_about_made_with">Created by Jack Aventura</string>
     <string name="compose_about_version_format">Version %1$s (%2$s)</string>
     <string name="compose_action_off">Off</string>
@@ -607,7 +607,7 @@
     <string name="settings_licenses_attributions_haze_title">Haze 1.7.2</string>
     <string name="settings_licenses_attributions_haze_body">Used for background blur effects. Created by Chris Banes.</string>
     <string name="settings_licenses_attributions_haze_license">Licensed under the Apache License, Version 2.0.</string>
-    <string name="settings_licenses_attributions_nuvio_title">Nuvio Mobile</string>
+    <string name="settings_licenses_attributions_nuvio_title">CINEBOX Mobile</string>
     <string name="settings_licenses_attributions_nuvio_body">Source code and license terms are available in the project repository.</string>
     <string name="settings_licenses_attributions_nuvio_license">Licensed under the GNU General Public License v3.0.</string>
     <string name="settings_licenses_attributions_tmdb_title">The Movie Database (TMDB)</string>
@@ -640,7 +640,7 @@
     <string name="compose_tracking_list_picker_loading">Loading lists…</string>
     <string name="compose_tracking_list_picker_subtitle">Choose where to save this title</string>
     <string name="action_donate">Donate</string>
-    <string name="action_support_nuvio">Support Nuvio</string>
+    <string name="action_support_nuvio">Support CINEBOX</string>
     <string name="cw_action_go_to_details">Go to details</string>
     <string name="cw_action_remove">Remove</string>
     <string name="cw_action_start_from_beginning">Start from beginning</string>
@@ -1066,15 +1066,15 @@
     <string name="settings_notifications_test_requires_saved_show">Save a show to your library first to test notifications.</string>
     <string name="settings_notifications_test_title">Test notification</string>
     <string name="community_section_title">Community</string>
-    <string name="community_section_description">See the people building and supporting Nuvio across Mobile, TV, and Web.</string>
-    <string name="community_membership_title">Nuvio Supporter Membership</string>
-    <string name="community_membership_description">Supporting Nuvio helps cover infrastructure and ongoing development while keeping the core experience free for everyone.</string>
+    <string name="community_section_description">See the people building and supporting CINEBOX across Mobile, TV, and Web.</string>
+    <string name="community_membership_title">CINEBOX Supporter Membership</string>
+    <string name="community_membership_description">Supporting CINEBOX helps cover infrastructure and ongoing development while keeping the core experience free for everyone.</string>
     <string name="community_view_supporter_membership">View Supporter Membership</string>
     <string name="community_membership_you_are">You’re a</string>
     <string name="community_membership_thank_you">Thank you.</string>
     <string name="community_membership_supporter_since">Supporter since %1$s.</string>
     <string name="community_membership_connected_title">Patreon is connected</string>
-    <string name="community_membership_connected_description">No active Nuvio tier was found on this Patreon account. View the available options or refresh after changing your Patreon membership.</string>
+    <string name="community_membership_connected_description">No active CINEBOX tier was found on this Patreon account. View the available options or refresh after changing your Patreon membership.</string>
     <string name="community_membership_manage">Manage membership</string>
     <string name="community_membership_refresh">Refresh</string>
     <string name="community_membership_refreshing">Refreshing</string>

@@ -569,7 +569,7 @@
     <string name="settings_licenses_attributions_section_app">ЛИЦЕНЗИЯ НА ПРИЛОЖЕНИЕ</string>
     <string name="settings_licenses_attributions_section_data">ДАННЫЕ И УСЛУГИ</string>
     <string name="settings_licenses_attributions_section_playback">ЛИЦЕНЗИЯ НА ВОСПРОИЗВЕДЕНИЕ</string>
-    <string name="settings_licenses_attributions_nuvio_title">Nuvio Мобильный</string>
+    <string name="settings_licenses_attributions_nuvio_title">CINEBOX Мобильный</string>
     <string name="settings_licenses_attributions_nuvio_body">Исходный код и условия лицензии доступны в репозитории проекта.</string>
     <string name="settings_licenses_attributions_nuvio_license">Лицензия GNU General Public License v3.0.</string>
     <string name="settings_licenses_attributions_tmdb_title">База данных фильмов (TMDB)</string>
@@ -599,7 +599,7 @@
     <string name="compose_tracking_list_picker_loading">Загрузка списков…</string>
     <string name="compose_tracking_list_picker_subtitle">Выберите, где сохранить этот фильм или сериал</string>
     <string name="action_donate">Пожертвовать</string>
-    <string name="action_support_nuvio">Поддержка Nuvio</string>
+    <string name="action_support_nuvio">Поддержка CINEBOX</string>
     <string name="cw_action_go_to_details">Перейти к деталям</string>
     <string name="cw_action_remove">Удалить</string>
     <string name="cw_action_start_from_beginning">Начать с начала</string>
@@ -957,9 +957,9 @@
     <string name="settings_notifications_test_requires_saved_show">Сначала сохраните шоу в своей библиотеке, чтобы проверить уведомления.</string>
     <string name="settings_notifications_test_title">Уведомление о тестировании</string>
     <string name="community_section_title">Сообщество</string>
-    <string name="community_section_description">Посмотрите, как люди создают и поддерживают Nuvio на мобильных устройствах, телевидении и в Интернете.</string>
-    <string name="community_membership_title">Членство сторонника Nuvio</string>
-    <string name="community_membership_description">Поддержка Nuvio помогает охватить инфраструктуру и постоянное развитие, сохраняя при этом основной опыт бесплатным для всех.</string>
+    <string name="community_section_description">Посмотрите, как люди создают и поддерживают CINEBOX на мобильных устройствах, телевидении и в Интернете.</string>
+    <string name="community_membership_title">Членство сторонника CINEBOX</string>
+    <string name="community_membership_description">Поддержка CINEBOX помогает охватить инфраструктуру и постоянное развитие, сохраняя при этом основной опыт бесплатным для всех.</string>
     <string name="community_view_supporter_membership">Просмотр членства сторонников</string>
     <string name="community_membership_you_are">Ты</string>
     <string name="community_membership_thank_you">Спасибо.</string>
