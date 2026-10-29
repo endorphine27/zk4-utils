@@ -750,6 +750,17 @@ fun MetaDetailsScreen(
                 val heroTrailerCandidate = remember(meta.trailers) {
                     selectHeroTrailer(meta.trailers)
                 }
+                // Resolve the trailer stream in the background so pressing Trailer starts almost instantly
+                LaunchedEffect(meta.id, inAppTrailerPlaybackEnabled, deferredMetaWorkAllowed) {
+                    if (!deferredMetaWorkAllowed || !inAppTrailerPlaybackEnabled) return@LaunchedEffect
+                    val prefetchUrls = listOfNotNull(
+                        heroTrailerCandidate?.youtubePlaybackUrl(),
+                        meta.trailers.firstOrNull()?.youtubePlaybackUrl(),
+                    ).distinct()
+                    for (url in prefetchUrls) {
+                        runCatching { TrailerPlaybackResolver.resolveFromYouTubeUrl(url) }
+                    }
+                }
                 val heroTrailerPlaybackEnabled = AppFeaturePolicy.heroTrailerPlaybackSupported &&
                     inAppTrailerPlaybackEnabled &&
                     metaScreenSettingsUiState.heroTrailerPlayback

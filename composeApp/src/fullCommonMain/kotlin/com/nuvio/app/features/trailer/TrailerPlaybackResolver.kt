@@ -1,5 +1,10 @@
 package com.nuvio.app.features.trailer
 
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Deferred
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.async
 import kotlinx.coroutines.sync.Mutex
 import kotlin.time.Duration.Companion.minutes
 import kotlin.time.TimeMark
@@ -9,6 +14,8 @@ actual object TrailerPlaybackResolver {
     private val extractor by lazy { InAppYouTubeExtractor() }
     private val cacheMutex = Mutex()
     private var playbackCache = emptyMap<String, CachedPlaybackSource>()
+    private val extractionScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
+    private val inFlight = mutableMapOf<String, Deferred<TrailerPlaybackSource?>>()
 
     actual suspend fun resolveFromYouTubeUrl(youtubeUrl: String): TrailerPlaybackSource? {
         if (youtubeUrl.isBlank()) return null
@@ -27,21 +34,35 @@ actual object TrailerPlaybackResolver {
             cacheMutex.unlock()
         }
 
-        val source = extractor.extractPlaybackSource(youtubeUrl)
-        if (source != null) {
+        // A prefetch and a click on the same trailer share one extraction; it keeps running if a caller leaves
+        val extraction = run {
             cacheMutex.lock()
             try {
-                playbackCache = playbackCache + (
-                    youtubeUrl to CachedPlaybackSource(
-                        source = source,
-                        cachedAt = TimeSource.Monotonic.markNow(),
-                    )
-                )
+                inFlight.getOrPut(youtubeUrl) {
+                    extractionScope.async {
+                        val extracted = extractor.extractPlaybackSource(youtubeUrl)
+                        cacheMutex.lock()
+                        try {
+                            if (extracted != null) {
+                                playbackCache = playbackCache + (
+                                    youtubeUrl to CachedPlaybackSource(
+                                        source = extracted,
+                                        cachedAt = TimeSource.Monotonic.markNow(),
+                                    )
+                                )
+                            }
+                            inFlight.remove(youtubeUrl)
+                        } finally {
+                            cacheMutex.unlock()
+                        }
+                        extracted
+                    }
+                }
             } finally {
                 cacheMutex.unlock()
             }
         }
-        return source
+        return extraction.await()
     }
 
     actual suspend fun resolveSingleUrlFromYouTubeUrl(youtubeUrl: String): String? {
