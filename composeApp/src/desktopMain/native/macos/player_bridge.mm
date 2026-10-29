@@ -9,6 +9,7 @@
 #import <WebKit/WebKit.h>
 
 #include <jni.h>
+#include <locale.h>
 #include <mpv/client.h>
 #include <mpv/render.h>
 #include <mpv/render_gl.h>
@@ -1713,6 +1714,8 @@ static void setMpvOptionString(mpv_handle *mpv, const char *name, const char *va
               playWhenReady:(BOOL)playWhenReady
            initialPositionMs:(long long)initialPositionMs
             decoderPriority:(int)decoderPriority {
+    // libmpv refuses to start unless LC_NUMERIC is "C"; a Romanian (or any non-English) macOS region sets a decimal comma
+    setlocale(LC_NUMERIC, "C");
     _mpv = mpv_create();
     if (!_mpv) {
         @throw [NSException exceptionWithName:@"PlayerBridgeError"
