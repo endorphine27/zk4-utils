@@ -49,13 +49,12 @@ actual object AppUpdaterPlatform {
     // A Flatpak cannot install anything for itself: the sandbox has no write
     // access to /app and the manifest grants no talk-name for the host Flatpak
     // service, so the update belongs to the user's store, not to this dialog.
-    // Personal build: updates are installed by hand from the DMG, and the release tags
-    // (personal-arm64-N) cannot be ordered by the updater, so it would offer old builds.
-    actual val isSupported: Boolean = false
+    actual val isSupported: Boolean
+        get() = currentOs != DesktopUpdaterOs.UNKNOWN && linuxInstallMethod != LinuxInstallMethod.FLATPAK
 
     actual val releaseSource: AppUpdateReleaseSource = AppUpdateReleaseSource(
         owner = "endorphine27",
-        repo = "zk4-utils",
+        repo = "nuvio-desktop",
         channelBranch = null,
         includePrereleases = true,
         userAgent = "NuvioDesktop",
