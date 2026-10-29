@@ -4,7 +4,7 @@
     <string name="party_start_title">Uitați-vă împreună</string>
     <string name="party_start_description">Invită-ți prietenii. Fiecare redă din propriile surse și rămâneți sincronizați.</string>
     <string name="party_start_action">Pornește vizionarea în grup</string>
-    <string name="party_sign_in_required">Autentifică-te în contul tău Nuvio ca să folosești vizionarea în grup.</string>
+    <string name="party_sign_in_required">Autentifică-te în contul tău CINEBOX ca să folosești vizionarea în grup.</string>
     <string name="party_unavailable">Vizionarea în grup nu este disponibilă acum.</string>
     <string name="party_experimental">Vizionarea în grup este experimentală și poate să nu funcționeze cum te aștepți.</string>
     <string name="party_code_label">Cod de grup</string>
