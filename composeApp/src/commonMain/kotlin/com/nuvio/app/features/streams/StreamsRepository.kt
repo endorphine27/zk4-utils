@@ -107,7 +107,12 @@ object StreamsRepository {
         val playerSettings = PlayerSettingsRepository.uiState.value
         val debridSettings = DebridSettingsRepository.snapshot()
         val streamBadgeRules = StreamBadgeSettingsRepository.snapshot()
-        val autoPlayMode = playerSettings.streamAutoPlayMode
+        // Live TV channels always start right away with the first stream, regardless of the autoplay setting
+        val autoPlayMode = if (type.equals("tv", ignoreCase = true)) {
+            StreamAutoPlayMode.FIRST_STREAM
+        } else {
+            playerSettings.streamAutoPlayMode
+        }
         val isAutoPlayEnabled = !manualSelection && autoPlayMode != StreamAutoPlayMode.MANUAL &&
             !(autoPlayMode == StreamAutoPlayMode.REGEX_MATCH &&
                 !StreamAutoPlayPolicy.isRegexSelectionConfigured(playerSettings.streamAutoPlayRegex))
