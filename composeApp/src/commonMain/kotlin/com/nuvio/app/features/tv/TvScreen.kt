@@ -134,7 +134,7 @@ fun TvScreen(
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
-                text = "TV",
+                text = "Canale TV",
                 modifier = Modifier.weight(1f),
                 style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.SemiBold),
                 color = MaterialTheme.colorScheme.onSurface,
