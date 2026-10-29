@@ -84,7 +84,7 @@ internal object DiscordPresenceManager {
 // Shown when nothing has been published yet, so the profile still reads "Watching Nuvio".
 private val IdleActivity = DiscordActivity(
     type = WatchingActivityType,
-    details = "Browsing CineBox",
+    details = "Browsing CINEBOX",
 )
 
 private fun String.toDiscordEpisodeLabel(): String {
