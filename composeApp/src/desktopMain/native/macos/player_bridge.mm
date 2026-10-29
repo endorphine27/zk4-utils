@@ -1774,6 +1774,9 @@ static void setMpvOptionString(mpv_handle *mpv, const char *name, const char *va
         NSString *reason = [NSString stringWithFormat:@"mpv_initialize failed: %s", mpv_error_string(initResult)];
         @throw [NSException exceptionWithName:@"PlayerBridgeError" reason:reason userInfo:nil];
     }
+    if (getenv("NUVIO_MPV_DEBUG")) {
+        mpv_request_log_messages(_mpv, "info");
+    }
     [self startMpvEventDrain];
 
     NSString *renderError = nil;
@@ -2211,6 +2214,20 @@ static void nuvioMpvWakeup(void *ctx) {
                         // old softvol drained out of the renderer's queue).
                         [self applyVolumeSplit:_requestedVolumePercent.load()];
                     }
+                }
+                break;
+            }
+            case MPV_EVENT_LOG_MESSAGE: {
+                mpv_event_log_message *msg = (mpv_event_log_message *)event->data;
+                if (msg && msg->text) {
+                    fprintf(stderr, "[mpv] %s: %s", msg->prefix ? msg->prefix : "", msg->text);
+                }
+                break;
+            }
+            case MPV_EVENT_END_FILE: {
+                mpv_event_end_file *end = (mpv_event_end_file *)event->data;
+                if (end && end->error < 0) {
+                    fprintf(stderr, "[mpv] playback ended with error: %s\n", mpv_error_string(end->error));
                 }
                 break;
             }
