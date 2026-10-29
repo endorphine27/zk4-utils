@@ -76,6 +76,7 @@ import com.nuvio.app.features.home.HomeScreen
 import com.nuvio.app.features.home.MetaPreview
 import com.nuvio.app.features.library.LibraryItem
 import com.nuvio.app.features.calendar.CalendarScreen
+import com.nuvio.app.features.tv.TvScreen
 import com.nuvio.app.features.library.LibraryScreen
 import com.nuvio.app.features.library.LibrarySection
 import com.nuvio.app.features.library.LibrarySortOption
@@ -105,6 +106,8 @@ import kotlinx.coroutines.flow.Flow
 import nuvio.composeapp.generated.resources.Res
 import nuvio.composeapp.generated.resources.app_brand_name
 import nuvio.composeapp.generated.resources.compose_nav_calendar
+import nuvio.composeapp.generated.resources.compose_nav_tv
+import nuvio.composeapp.generated.resources.sidebar_tv
 import nuvio.composeapp.generated.resources.compose_nav_home
 import nuvio.composeapp.generated.resources.compose_nav_library
 import nuvio.composeapp.generated.resources.compose_nav_profile
@@ -291,6 +294,15 @@ internal fun AppTabHost(
                     modifier = Modifier.fillMaxSize(),
                     topChromePadding = state.topChromePadding,
                     onItemClick = actions.onLibraryPosterClick,
+                )
+            }
+
+            AppScreenTab.Tv -> {
+                TvScreen(
+                    modifier = Modifier.fillMaxSize(),
+                    topChromePadding = state.topChromePadding,
+                    onChannelClick = actions.onPosterClick,
+                    onSectionClick = actions.onCatalogClick,
                 )
             }
 
@@ -880,6 +892,19 @@ internal fun DesktopHoverSidebar(
                     Icon(
                         imageVector = Icons.Filled.DateRange,
                         contentDescription = stringResource(Res.string.compose_nav_calendar),
+                        modifier = Modifier.size(DesktopSidebarIconSize),
+                        tint = color,
+                    )
+                }
+                DesktopSidebarItem(
+                    label = stringResource(Res.string.compose_nav_tv),
+                    selected = selectedTab == AppScreenTab.Tv,
+                    expanded = sidebarExpanded,
+                    onClick = { selectTab(AppScreenTab.Tv) },
+                ) { color ->
+                    Icon(
+                        painter = painterResource(Res.drawable.sidebar_tv),
+                        contentDescription = stringResource(Res.string.compose_nav_tv),
                         modifier = Modifier.size(DesktopSidebarIconSize),
                         tint = color,
                     )
