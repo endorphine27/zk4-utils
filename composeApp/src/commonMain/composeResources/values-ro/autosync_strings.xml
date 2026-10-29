@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_playback_subtitle_auto_sync">Sincronizare automată subtitrare</string>
+    <string name="settings_playback_subtitle_auto_sync_description">Sincronizează automat subtitrarea preferată de la addon când începe redarea. Necesită o limbă preferată pentru subtitrări.</string>
+    <string name="settings_playback_auto_sync_mode_aggressive">Căutare sincronizare automată: Amănunțită</string>
+    <string name="settings_playback_auto_sync_mode_aggressive_description">Continuă să compare alte subtitrări și piste încorporate ca să găsească o potrivire mai apropiată, înainte de sincronizare. Se aplică doar potrivirile sigure.</string>
+    <string name="settings_playback_auto_sync_mode_passive">Căutare sincronizare automată: Rapidă</string>
+    <string name="settings_playback_auto_sync_mode_passive_description">Folosește mai repede prima potrivire bună. Se aplică doar potrivirile sigure, ca la modul Amănunțit.</string>
+    <string name="settings_playback_auto_sync_tolerance">Toleranță sincronizare automată: %1$s</string>
+    <string name="settings_playback_auto_sync_tolerance_description">Păstrează sincronizarea originală a subtitrării când sincronizarea ar muta-o cu cel mult această valoare. Atinge ca să schimbi.</string>
+    <string name="settings_playback_auto_sync_tolerance_off">Oprită</string>
+    <string name="settings_playback_auto_sync_tolerance_value">%1$d ms</string>
+</resources>
