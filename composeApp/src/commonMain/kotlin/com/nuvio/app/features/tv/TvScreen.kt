@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -45,8 +46,7 @@ import com.nuvio.app.features.home.HomeCatalogSection
 import com.nuvio.app.features.home.MetaPreview
 import com.nuvio.app.features.home.buildHomeCatalogDefinitions
 
-private val TileMinWidth = 168.dp
-private val TileImageHeight = 112.dp
+private val TileMinWidth = 220.dp
 
 private data class TvCatalog(
     val key: String,
@@ -178,8 +178,8 @@ fun TvScreen(
             LazyVerticalGrid(
                 columns = GridCells.Adaptive(TileMinWidth),
                 modifier = Modifier.fillMaxSize(),
-                horizontalArrangement = Arrangement.spacedBy(12.dp),
-                verticalArrangement = Arrangement.spacedBy(16.dp),
+                horizontalArrangement = Arrangement.spacedBy(16.dp),
+                verticalArrangement = Arrangement.spacedBy(20.dp),
             ) {
                 if (!searching && favoriteChannels.isNotEmpty()) {
                     item(span = { GridItemSpan(maxLineSpan) }, key = "h-fav") { SectionTitle("Favorite") }
@@ -288,16 +288,16 @@ private fun ChannelTile(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(TileImageHeight)
-                .clip(RoundedCornerShape(12.dp))
+                .aspectRatio(1f)
+                .clip(RoundedCornerShape(16.dp))
                 .background(colors.surfaceVariant.copy(alpha = 0.5f)),
             contentAlignment = Alignment.Center,
         ) {
             AsyncImage(
                 model = channel.poster ?: channel.logo ?: channel.landscapePoster,
                 contentDescription = channel.name,
-                modifier = Modifier.fillMaxSize().padding(10.dp),
-                contentScale = ContentScale.Fit,
+                modifier = Modifier.fillMaxSize(),
+                contentScale = ContentScale.Crop,
             )
             Text(
                 text = if (isFavorite) "★" else "☆",
