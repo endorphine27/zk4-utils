@@ -208,10 +208,15 @@ object HomeRepository {
         val catalogHeroItems = if (snapshot.heroEnabled) {
             val heroRandom = Random((requestKey?.hashCode() ?: 0).absoluteValue + 1)
             currentDefinitions
-                .filter { definition -> preferences[definition.key]?.heroSourceEnabled != false }
+                .filter { definition ->
+                    val preference = preferences[definition.key]
+                    preference?.enabled != false && preference?.heroSourceEnabled != false
+                }
                 .mapNotNull { definition -> cachedSections[definition.cacheKey] }
                 .map { section -> section.withPosterOverlay().withReleaseFilter() }
                 .flatMap { section -> section.items }
+                // Items without artwork (e.g. debrid file lists) make an empty banner
+                .filter { item -> item.poster != null || item.banner != null || item.landscapePoster != null }
                 .distinctBy { item -> "${item.type}:${item.id}" }
                 .shuffled(heroRandom)
                 .take(HOME_HERO_ITEM_LIMIT)
