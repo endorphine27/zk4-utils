@@ -11,17 +11,20 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.GridItemSpan
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -32,28 +35,41 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import com.nuvio.app.features.catalog.CatalogRepository
 import com.nuvio.app.features.home.HomeCatalogSection
 import com.nuvio.app.features.home.HomeRepository
 import com.nuvio.app.features.home.MetaPreview
 
-private val TileWidth = 168.dp
-private val TileHeight = 112.dp
+private val TileMinWidth = 168.dp
+private val TileImageHeight = 112.dp
 
 private fun HomeCatalogSection.isTvSection(): Boolean =
     target.contentType.equals("tv", ignoreCase = true) ||
         items.any { it.type.equals("tv", ignoreCase = true) }
 
-/** Live TV channels: every home catalog whose content type is "tv", shown as rows of channel tiles. */
+/** Live TV channels: the full "tv" catalog shown as a grid of channel tiles. */
 @Composable
 fun TvScreen(
     modifier: Modifier = Modifier,
     topChromePadding: Dp? = null,
     onChannelClick: ((MetaPreview) -> Unit)? = null,
-    onSectionClick: ((HomeCatalogSection) -> Unit)? = null,
+    @Suppress("UNUSED_PARAMETER") onSectionClick: ((HomeCatalogSection) -> Unit)? = null,
 ) {
     val homeState by HomeRepository.uiState.collectAsState()
     val sections = remember(homeState.sections) {
         homeState.sections.filter { it.isTvSection() && it.items.isNotEmpty() }
+    }
+    var selectedKey by remember { mutableStateOf<String?>(null) }
+    val selected = sections.firstOrNull { it.key == selectedKey } ?: sections.firstOrNull()
+
+    LaunchedEffect(selected?.target) {
+        selected?.let { CatalogRepository.load(it.target) }
+    }
+    val catalogState by CatalogRepository.uiState.collectAsState()
+    val channels = when {
+        selected == null -> emptyList()
+        catalogState.items.isNotEmpty() && !catalogState.isLoading -> catalogState.items
+        else -> selected.items
     }
 
     Column(
@@ -68,7 +84,36 @@ fun TvScreen(
             color = MaterialTheme.colorScheme.onSurface,
         )
         Spacer(Modifier.height(12.dp))
-        if (sections.isEmpty()) {
+        if (sections.size > 1) {
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                sections.forEach { section ->
+                    val isSelected = section.key == selected?.key
+                    Text(
+                        text = section.title,
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(20.dp))
+                            .background(
+                                if (isSelected) MaterialTheme.colorScheme.primary
+                                else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.6f),
+                            )
+                            .clickable { selectedKey = section.key }
+                            .padding(horizontal = 14.dp, vertical = 6.dp),
+                        style = MaterialTheme.typography.labelLarge,
+                        color = if (isSelected) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurface,
+                    )
+                }
+            }
+            Spacer(Modifier.height(12.dp))
+        } else if (selected != null) {
+            Text(
+                text = selected.title,
+                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.SemiBold),
+                color = MaterialTheme.colorScheme.onSurface,
+            )
+            Spacer(Modifier.height(12.dp))
+        }
+
+        if (selected == null) {
             Text(
                 text = if (homeState.isLoading) {
                     "Se încarcă canalele..."
@@ -79,36 +124,19 @@ fun TvScreen(
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
         } else {
-            LazyColumn(verticalArrangement = Arrangement.spacedBy(20.dp)) {
-                items(sections, key = { it.key }) { section ->
-                    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            verticalAlignment = Alignment.CenterVertically,
-                        ) {
-                            Text(
-                                text = section.title,
-                                modifier = Modifier.weight(1f),
-                                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.SemiBold),
-                                color = MaterialTheme.colorScheme.onSurface,
-                            )
-                            if (onSectionClick != null) {
-                                Text(
-                                    text = "Vezi tot",
-                                    modifier = Modifier
-                                        .clip(RoundedCornerShape(8.dp))
-                                        .clickable { onSectionClick(section) }
-                                        .padding(horizontal = 8.dp, vertical = 4.dp),
-                                    style = MaterialTheme.typography.labelLarge,
-                                    color = MaterialTheme.colorScheme.primary,
-                                )
-                            }
-                        }
-                        LazyRow(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                            items(section.items, key = { "${it.type}:${it.id}" }) { channel ->
-                                ChannelTile(channel = channel, onClick = { onChannelClick?.invoke(channel) })
-                            }
-                        }
+            LazyVerticalGrid(
+                columns = GridCells.Adaptive(TileMinWidth),
+                modifier = Modifier.fillMaxSize(),
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                verticalArrangement = Arrangement.spacedBy(16.dp),
+            ) {
+                items(channels, key = { "${it.type}:${it.id}" }) { channel ->
+                    ChannelTile(channel = channel, onClick = { onChannelClick?.invoke(channel) })
+                }
+                if (catalogState.canLoadMore) {
+                    item(span = { GridItemSpan(maxLineSpan) }, key = "load-more-${channels.size}") {
+                        LaunchedEffect(channels.size) { CatalogRepository.loadMore() }
+                        Spacer(Modifier.height(1.dp))
                     }
                 }
             }
@@ -124,15 +152,15 @@ private fun ChannelTile(
     val colors = MaterialTheme.colorScheme
     Column(
         modifier = Modifier
-            .width(TileWidth)
+            .fillMaxWidth()
             .clip(RoundedCornerShape(12.dp))
             .clickable(onClick = onClick),
         verticalArrangement = Arrangement.spacedBy(6.dp),
     ) {
         Box(
             modifier = Modifier
-                .width(TileWidth)
-                .height(TileHeight)
+                .fillMaxWidth()
+                .height(TileImageHeight)
                 .clip(RoundedCornerShape(12.dp))
                 .background(colors.surfaceVariant.copy(alpha = 0.5f)),
             contentAlignment = Alignment.Center,
