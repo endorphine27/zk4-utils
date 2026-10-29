@@ -156,6 +156,8 @@ internal object TrailerExtractionPlatform {
         TrailerPlaybackSource(
             videoUrl = videoUrl,
             audioUrl = audioUrl,
+            // googlevideo drops requests that carry the default ffmpeg/mpv user agent
+            headers = mapOf("User-Agent" to defaultHeaders.getValue("user-agent")),
         )
     }
 

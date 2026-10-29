@@ -127,6 +127,7 @@ private fun TrailerPlaybackSurface(
     PlatformPlayerSurface(
         sourceUrl = source.videoUrl,
         sourceAudioUrl = source.audioUrl,
+        sourceHeaders = source.headers,
         useYoutubeChunkedPlayback = true,
         modifier = Modifier.fillMaxSize(),
         playWhenReady = state.playWhenReady && !restoringPosition && !state.snapshot.isEnded &&
