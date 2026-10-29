@@ -38,13 +38,6 @@ internal fun LazyListScope.integrationsContent(
                     isTablet = isTablet,
                     onClick = onMdbListClick,
                 )
-                SettingsGroupDivider(isTablet = isTablet)
-                SettingsNavigationRow(
-                    title = stringResource(Res.string.compose_settings_page_debrid),
-                    description = stringResource(Res.string.settings_integrations_debrid_description),
-                    isTablet = isTablet,
-                    onClick = onDebridClick,
-                )
             }
         }
     }
