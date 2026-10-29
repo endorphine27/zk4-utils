@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -44,6 +45,9 @@ import com.nuvio.app.features.library.LibraryRepository
 import com.nuvio.app.features.notifications.EpisodeReleaseNotificationsClock
 import com.nuvio.app.features.notifications.isSeriesLibraryType
 import com.nuvio.app.features.notifications.releaseDateIso
+import com.nuvio.app.features.watched.WatchedClock
+import com.nuvio.app.features.watched.WatchedItem
+import com.nuvio.app.features.watched.WatchedRepository
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -65,6 +69,7 @@ private data class CalendarEntry(
     val dateIso: String,
     val season: Int?,
     val episode: Int?,
+    val videoId: String,
     val episodeTitle: String,
     val thumbnail: String?,
 )
@@ -128,6 +133,7 @@ fun CalendarScreen(
     val todayParts = remember(today) { parseIso(today) ?: Triple(2026, 1, 1) }
     var visibleMonth by remember { mutableStateOf(YearMonth(todayParts.first, todayParts.second)) }
     var selectedDate by remember { mutableStateOf<String?>(null) }
+    var filterShowId by remember { mutableStateOf<String?>(null) }
     val entries = remember { mutableStateListOf<CalendarEntry>() }
     var isLoading by remember { mutableStateOf(true) }
 
@@ -158,6 +164,7 @@ fun CalendarScreen(
                                 dateIso = date,
                                 season = video.season,
                                 episode = video.episode,
+                                videoId = video.id,
                                 episodeTitle = video.title,
                                 thumbnail = video.thumbnail ?: meta.background ?: item.poster,
                             )
@@ -172,8 +179,15 @@ fun CalendarScreen(
         }
     }
 
-    val byDate = remember(entries.toList()) { entries.groupBy { it.dateIso } }
-    val sidePanelDates = remember(entries.toList(), selectedDate, today) {
+    val shows = remember(entries.toList()) {
+        entries.map { it.item }.distinctBy { it.id }.sortedBy { it.name.lowercase() }
+    }
+    val visibleEntries = remember(entries.toList(), filterShowId) {
+        entries.filter { filterShowId == null || it.item.id == filterShowId }
+    }
+    val watchedState by WatchedRepository.uiState.collectAsState()
+    val byDate = remember(visibleEntries) { visibleEntries.groupBy { it.dateIso } }
+    val sidePanelDates = remember(visibleEntries, selectedDate, today) {
         val selected = selectedDate
         if (selected != null) {
             listOf(selected)
@@ -195,6 +209,21 @@ fun CalendarScreen(
                 onPrevious = { visibleMonth = visibleMonth.plusMonths(-1) },
                 onNext = { visibleMonth = visibleMonth.plusMonths(1) },
             )
+            if (shows.size > 1) {
+                Spacer(Modifier.height(10.dp))
+                LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    item(key = "all") {
+                        FilterChip(label = "Toate", selected = filterShowId == null, onClick = { filterShowId = null })
+                    }
+                    items(shows, key = { it.id }) { show ->
+                        FilterChip(
+                            label = show.name,
+                            selected = filterShowId == show.id,
+                            onClick = { filterShowId = if (filterShowId == show.id) null else show.id },
+                        )
+                    }
+                }
+            }
             Spacer(Modifier.height(12.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 WeekdayNames.forEach { name ->
@@ -250,7 +279,32 @@ fun CalendarScreen(
                             )
                         }
                         items(dayEntries, key = { "$date-${it.item.id}-${it.season}-${it.episode}" }) { entry ->
-                            EpisodeRow(entry = entry, onClick = { onItemClick?.invoke(entry.item) })
+                            val watched = watchedState.isLoaded && WatchedRepository.isWatched(
+                                id = entry.item.id,
+                                type = entry.item.type,
+                                season = entry.season,
+                                episode = entry.episode,
+                            )
+                            EpisodeRow(
+                                entry = entry,
+                                watched = watched,
+                                onClick = { onItemClick?.invoke(entry.item) },
+                                onToggleWatched = {
+                                    WatchedRepository.toggleWatched(
+                                        WatchedItem(
+                                            id = entry.item.id,
+                                            type = entry.item.type,
+                                            name = entry.episodeTitle.ifBlank { entry.item.name },
+                                            poster = entry.thumbnail ?: entry.item.poster,
+                                            releaseInfo = entry.item.releaseInfo,
+                                            season = entry.season,
+                                            episode = entry.episode,
+                                            videoId = entry.videoId,
+                                            markedAtEpochMs = WatchedClock.nowEpochMs(),
+                                        ),
+                                    )
+                                },
+                            )
                         }
                     }
                 }
@@ -390,14 +444,16 @@ private fun DayCell(
 @Composable
 private fun EpisodeRow(
     entry: CalendarEntry,
+    watched: Boolean,
     onClick: () -> Unit,
+    onToggleWatched: () -> Unit,
 ) {
     val colors = MaterialTheme.colorScheme
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(12.dp))
-            .background(colors.surfaceVariant.copy(alpha = 0.45f))
+            .background(colors.surfaceVariant.copy(alpha = if (watched) 0.2f else 0.45f))
             .clickable(onClick = onClick)
             .padding(8.dp),
         horizontalArrangement = Arrangement.spacedBy(12.dp),
@@ -434,5 +490,35 @@ private fun EpisodeRow(
                 )
             }
         }
+        Text(
+            text = if (watched) "✓" else "○",
+            modifier = Modifier
+                .clip(CircleShape)
+                .clickable(onClick = onToggleWatched)
+                .padding(horizontal = 10.dp, vertical = 4.dp),
+            style = MaterialTheme.typography.titleMedium,
+            color = if (watched) colors.primary else colors.onSurfaceVariant,
+        )
     }
+}
+
+@Composable
+private fun FilterChip(
+    label: String,
+    selected: Boolean,
+    onClick: () -> Unit,
+) {
+    val colors = MaterialTheme.colorScheme
+    Text(
+        text = label,
+        modifier = Modifier
+            .clip(RoundedCornerShape(20.dp))
+            .background(if (selected) colors.primary else colors.surfaceVariant.copy(alpha = 0.6f))
+            .clickable(onClick = onClick)
+            .padding(horizontal = 14.dp, vertical = 6.dp),
+        style = MaterialTheme.typography.labelLarge,
+        color = if (selected) colors.onPrimary else colors.onSurface,
+        maxLines = 1,
+        overflow = TextOverflow.Ellipsis,
+    )
 }
