@@ -35,19 +35,23 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import com.nuvio.app.features.addons.AddonRepository
 import com.nuvio.app.features.catalog.CatalogRepository
+import com.nuvio.app.features.catalog.CatalogTarget
 import com.nuvio.app.features.home.HomeCatalogSection
-import com.nuvio.app.features.home.HomeRepository
 import com.nuvio.app.features.home.MetaPreview
+import com.nuvio.app.features.home.buildHomeCatalogDefinitions
 
 private val TileMinWidth = 168.dp
 private val TileImageHeight = 112.dp
 
-private fun HomeCatalogSection.isTvSection(): Boolean =
-    target.contentType.equals("tv", ignoreCase = true) ||
-        items.any { it.type.equals("tv", ignoreCase = true) }
+private data class TvCatalog(
+    val key: String,
+    val title: String,
+    val target: CatalogTarget,
+)
 
-/** Live TV channels: the full "tv" catalog shown as a grid of channel tiles. */
+/** Live TV channels: every addon catalog of type "tv" (independent of what is shown on the home screen), as a grid. */
 @Composable
 fun TvScreen(
     modifier: Modifier = Modifier,
@@ -55,22 +59,31 @@ fun TvScreen(
     onChannelClick: ((MetaPreview) -> Unit)? = null,
     @Suppress("UNUSED_PARAMETER") onSectionClick: ((HomeCatalogSection) -> Unit)? = null,
 ) {
-    val homeState by HomeRepository.uiState.collectAsState()
-    val sections = remember(homeState.sections) {
-        homeState.sections.filter { it.isTvSection() && it.items.isNotEmpty() }
+    val addonsState by AddonRepository.uiState.collectAsState()
+    val catalogs = remember(addonsState.addons) {
+        buildHomeCatalogDefinitions(addonsState.addons)
+            .filter { it.serverConnectionId == null && it.type.equals("tv", ignoreCase = true) }
+            .map { definition ->
+                TvCatalog(
+                    key = definition.key,
+                    title = definition.catalogName,
+                    target = CatalogTarget.Addon(
+                        manifestUrl = definition.manifestUrl,
+                        contentType = definition.type,
+                        catalogId = definition.catalogId,
+                        supportsPagination = definition.supportsPagination,
+                    ),
+                )
+            }
     }
     var selectedKey by remember { mutableStateOf<String?>(null) }
-    val selected = sections.firstOrNull { it.key == selectedKey } ?: sections.firstOrNull()
+    val selected = catalogs.firstOrNull { it.key == selectedKey } ?: catalogs.firstOrNull()
 
     LaunchedEffect(selected?.target) {
         selected?.let { CatalogRepository.load(it.target) }
     }
     val catalogState by CatalogRepository.uiState.collectAsState()
-    val channels = when {
-        selected == null -> emptyList()
-        catalogState.items.isNotEmpty() && !catalogState.isLoading -> catalogState.items
-        else -> selected.items
-    }
+    val channels = if (selected == null) emptyList() else catalogState.items
 
     Column(
         modifier = modifier
@@ -84,9 +97,9 @@ fun TvScreen(
             color = MaterialTheme.colorScheme.onSurface,
         )
         Spacer(Modifier.height(12.dp))
-        if (sections.size > 1) {
+        if (catalogs.size > 1) {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                sections.forEach { section ->
+                catalogs.forEach { section ->
                     val isSelected = section.key == selected?.key
                     Text(
                         text = section.title,
@@ -115,11 +128,13 @@ fun TvScreen(
 
         if (selected == null) {
             Text(
-                text = if (homeState.isLoading) {
-                    "Se încarcă canalele..."
-                } else {
-                    "Nu am găsit canale TV. Adaugă un addon cu canale (tip „tv”) din Addonuri și activează-i cataloagele pe ecranul principal."
-                },
+                text = "Nu am găsit canale TV. Adaugă un addon cu canale (tip „tv”) din Addonuri.",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        } else if (channels.isEmpty()) {
+            Text(
+                text = catalogState.errorMessage ?: if (catalogState.isLoading) "Se încarcă canalele..." else "Catalogul nu are canale.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
