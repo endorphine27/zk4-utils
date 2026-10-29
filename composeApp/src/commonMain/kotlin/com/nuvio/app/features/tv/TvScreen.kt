@@ -101,6 +101,10 @@ fun TvScreen(
     val preferences by TvPreferencesRepository.state.collectAsState()
     val channels = if (selected == null) emptyList() else catalogState.items
 
+    LaunchedEffect(channels) {
+        if (channels.isNotEmpty()) TvChannelRegistry.channels = channels
+    }
+
     val searching = query.isNotBlank()
     val filtered = remember(channels, query) {
         if (query.isBlank()) channels else channels.filter { it.name.contains(query.trim(), ignoreCase = true) }

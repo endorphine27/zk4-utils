@@ -1088,6 +1088,41 @@ internal fun MainAppContent(
             )
         }
 
+        fun zapTvChannel(direction: Int) {
+            val playerRoute = navController.currentRoute as? PlayerRoute ?: return
+            val playing = PlayerLaunchStore.get(playerRoute.launchId) ?: return
+            if (!playing.parentMetaType.equals("tv", ignoreCase = true)) return
+            val channels = com.nuvio.app.features.tv.TvChannelRegistry.channels
+            if (channels.size < 2) return
+            val index = channels.indexOfFirst { it.id == playing.parentMetaId }
+            if (index < 0) return
+            val next = channels[(index + direction + channels.size) % channels.size]
+            navController.popBackStack()
+            launchPlaybackWithDownloadPreference(
+                type = next.type,
+                videoId = next.id,
+                parentMetaId = next.id,
+                parentMetaType = next.type,
+                title = next.name,
+                logo = next.logo,
+                poster = next.poster,
+                background = next.banner,
+                seasonNumber = null,
+                episodeNumber = null,
+                episodeTitle = null,
+                episodeThumbnail = null,
+                pauseDescription = null,
+                resumePositionMs = null,
+                resumeProgressFraction = null,
+                manualSelection = false,
+                startFromBeginning = false,
+            )
+        }
+        DisposableEffect(navController) {
+            com.nuvio.app.features.tv.ChannelZapController.handler = { direction -> zapTvChannel(direction) }
+            onDispose { com.nuvio.app.features.tv.ChannelZapController.handler = null }
+        }
+
         val onPlay: ContentPlayAction =
             { type, videoId, parentMetaId, parentMetaType, title, logo, poster, background, seasonNumber, episodeNumber, episodeTitle, episodeThumbnail, pauseDescription, resumePositionMs ->
                 launchPlaybackWithDownloadPreference(

@@ -67,3 +67,17 @@ internal object TvPreferencesRepository {
         )
     }
 }
+
+/** The channels of the TV tab in display order, so the player can switch to the next/previous one. */
+internal object TvChannelRegistry {
+    var channels: List<com.nuvio.app.features.home.MetaPreview> = emptyList()
+}
+
+/** Lets the player ask the app shell to open the next or previous TV channel. */
+internal object ChannelZapController {
+    var handler: ((Int) -> Unit)? = null
+
+    fun zap(direction: Int) {
+        handler?.invoke(direction)
+    }
+}

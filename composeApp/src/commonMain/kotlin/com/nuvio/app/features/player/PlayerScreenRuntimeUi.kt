@@ -303,6 +303,7 @@ internal fun PlayerScreenRuntime.RenderPlayerRuntimeUi() {
         resizeModeLabel = stringResource(resizeMode.labelRes),
         playbackSpeedLabel = formatPlaybackSpeedLabel(playbackSnapshot.playbackSpeed),
         holdToSpeedEnabled = playerSettingsUiState.holdToSpeedEnabled && !partyControls.synced,
+        channelZapEnabled = parentMetaType.equals("tv", ignoreCase = true),
         holdToSpeedValue = playerSettingsUiState.holdToSpeedValue,
         subtitlesLabel = stringResource(Res.string.compose_player_subs),
         audioLabel = stringResource(Res.string.compose_player_audio),
@@ -1002,6 +1003,9 @@ private fun PlayerScreenRuntime.handlePlayerControlsEvent(type: String, value: D
         "setPlaybackSpeed" -> {
             if (!isPartySynced) return false
             selectPlaybackSpeed(value.toFloat())
+        }
+        "channelZap" -> {
+            com.nuvio.app.features.tv.ChannelZapController.zap(if (value >= 0.0) 1 else -1)
         }
         "streamInfo" -> refreshStreamInfo()
         "selectChapter" -> {

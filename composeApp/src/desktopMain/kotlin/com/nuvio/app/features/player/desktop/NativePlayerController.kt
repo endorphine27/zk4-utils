@@ -1302,6 +1302,8 @@ private fun PlayerControlsState.toControlsJson(isFullscreen: Boolean, onImageRea
         append(',')
         appendJsonField("holdToSpeedEnabled", holdToSpeedEnabled)
         append(',')
+        appendJsonField("channelZapEnabled", channelZapEnabled)
+        append(',')
         appendJsonField("holdToSpeedValue", holdToSpeedValue)
         append(',')
         appendJsonField("isFullscreen", isFullscreen)

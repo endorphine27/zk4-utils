@@ -197,6 +197,7 @@ let state = {
   resizeModeLabel: "Fit",
   playbackSpeedLabel: "1x",
   holdToSpeedEnabled: true,
+  channelZapEnabled: false,
   holdToSpeedValue: 2.0,
   isFullscreen: false,
   volumeLevel: null,
@@ -3958,6 +3959,16 @@ document.addEventListener("keydown", event => {
   }
   if (isTextEntryTarget(event.target)) {
     return;
+  }
+  // Live TV: P+/P- (PageUp/PageDown), channel keys and Up/Down switch the channel
+  if (state.channelZapEnabled && !activeModal) {
+    const zapNext = event.code === "PageUp" || event.code === "ChannelUp" || event.code === "ArrowUp" || event.code === "BracketRight";
+    const zapPrev = event.code === "PageDown" || event.code === "ChannelDown" || event.code === "ArrowDown" || event.code === "BracketLeft";
+    if (zapNext || zapPrev) {
+      event.preventDefault();
+      send("channelZap", zapNext ? 1 : -1);
+      return;
+    }
   }
 
   if ((activeModal === "episodes" || activeModal === "sources") && (event.code === "ArrowLeft" || event.code === "ArrowRight")) {

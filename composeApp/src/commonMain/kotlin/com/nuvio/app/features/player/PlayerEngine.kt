@@ -112,6 +112,7 @@ data class PlayerControlsState(
     val resizeModeLabel: String = "Fit",
     val playbackSpeedLabel: String = "1x",
     val holdToSpeedEnabled: Boolean = true,
+    val channelZapEnabled: Boolean = false,
     val holdToSpeedValue: Float? = 2f,
     val volumeLevel: Float? = null,
     val subtitlesLabel: String = "Subs",
