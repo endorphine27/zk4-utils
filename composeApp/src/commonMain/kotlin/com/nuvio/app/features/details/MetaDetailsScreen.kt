@@ -510,7 +510,6 @@ fun MetaDetailsScreen(
                     Text(
                         text = when (networkStatusUiState.condition) {
                             NetworkCondition.NoInternet -> stringResource(Res.string.details_check_connection)
-                            NetworkCondition.ServersUnreachable -> stringResource(Res.string.details_servers_unreachable)
                             else -> uiState.errorMessage.orEmpty()
                         },
                         style = MaterialTheme.typography.bodyMedium,

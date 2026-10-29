@@ -136,6 +136,11 @@ object NetworkStatusRepository {
             return NetworkCondition.NoInternet
         }
 
+        // No backend configured (self-built app): there is nothing to probe, so the device is simply online.
+        if (SupabaseEndpointConfig.restEndpointUrls().isEmpty()) {
+            return NetworkCondition.Online
+        }
+
         val supabaseReachable = SupabaseEndpointConfig.restEndpointUrls().any { url ->
             probeReachable(
                 url = url,
