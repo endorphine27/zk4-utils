@@ -884,19 +884,6 @@ internal fun DesktopHoverSidebar(
                     )
                 }
                 DesktopSidebarItem(
-                    label = stringResource(Res.string.compose_nav_calendar),
-                    selected = selectedTab == AppScreenTab.Calendar,
-                    expanded = sidebarExpanded,
-                    onClick = { selectTab(AppScreenTab.Calendar) },
-                ) { color ->
-                    Icon(
-                        imageVector = Icons.Filled.DateRange,
-                        contentDescription = stringResource(Res.string.compose_nav_calendar),
-                        modifier = Modifier.size(DesktopSidebarIconSize),
-                        tint = color,
-                    )
-                }
-                DesktopSidebarItem(
                     label = stringResource(Res.string.compose_nav_tv),
                     selected = selectedTab == AppScreenTab.Tv,
                     expanded = sidebarExpanded,
@@ -905,6 +892,19 @@ internal fun DesktopHoverSidebar(
                     Icon(
                         painter = painterResource(Res.drawable.sidebar_tv),
                         contentDescription = stringResource(Res.string.compose_nav_tv),
+                        modifier = Modifier.size(DesktopSidebarIconSize),
+                        tint = color,
+                    )
+                }
+                DesktopSidebarItem(
+                    label = stringResource(Res.string.compose_nav_calendar),
+                    selected = selectedTab == AppScreenTab.Calendar,
+                    expanded = sidebarExpanded,
+                    onClick = { selectTab(AppScreenTab.Calendar) },
+                ) { color ->
+                    Icon(
+                        imageVector = Icons.Filled.DateRange,
+                        contentDescription = stringResource(Res.string.compose_nav_calendar),
                         modifier = Modifier.size(DesktopSidebarIconSize),
                         tint = color,
                     )
