@@ -512,7 +512,7 @@
     <string name="compose_search_placeholder">Search movies, shows...</string>
     <string name="compose_search_recent_searches">Recent Searches</string>
     <string name="compose_search_remove_recent_search">Remove recent search</string>
-    <string name="compose_settings_category_about">About</string>
+    <string name="compose_settings_category_about">Updates</string>
     <string name="compose_settings_category_general">General</string>
     <string name="compose_settings_page_account">Account</string>
     <string name="compose_settings_page_addons">Addons</string>
@@ -540,7 +540,7 @@
     <string name="compose_settings_page_tmdb_enrichment">TMDB Enrichment</string>
     <string name="compose_settings_page_trakt">Trakt</string>
     <string name="compose_settings_page_tracking">Tracking</string>
-    <string name="compose_settings_root_about_section">ABOUT</string>
+    <string name="compose_settings_root_about_section">UPDATES</string>
     <string name="compose_settings_root_account_description">Account and sync status</string>
     <string name="compose_settings_root_account_section">ACCOUNT</string>
     <string name="compose_settings_root_advanced_description">Startup and profile behavior.</string>

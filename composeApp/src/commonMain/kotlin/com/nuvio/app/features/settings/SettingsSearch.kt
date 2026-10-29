@@ -273,59 +273,12 @@ internal fun settingsSearchEntries(
             icon = Icons.Rounded.Notifications,
         )
     }
-    if (supportersContributorsPageEnabled) {
-        addPage(
-            page = SettingsPage.SupportersContributors,
-            key = "supporters",
-            title = supportersPage,
-            description = stringResource(Res.string.about_supporters_contributors_subtitle),
-            category = aboutCategory,
-            icon = Icons.Rounded.Favorite,
-        )
-    }
-    addPage(
-        page = SettingsPage.LicensesAttributions,
-        key = "licenses-attributions",
-        title = licensesPage,
-        description = stringResource(Res.string.about_licenses_attributions_subtitle),
-        category = aboutCategory,
-        icon = Icons.Rounded.Info,
-    )
-    val appLicense = appLicenseItem()
-    val playbackLicense = platformLicenseItem()
-    listOf(
-        PlaybackSearchRow("nuvio-license", stringResource(appLicense.titleRes), stringResource(appLicense.licenseRes)),
-        PlaybackSearchRow("tmdb-attribution", stringResource(Res.string.settings_licenses_attributions_tmdb_title), stringResource(Res.string.settings_licenses_attributions_tmdb_body)),
-        PlaybackSearchRow("trakt-attribution", stringResource(Res.string.settings_licenses_attributions_trakt_title), stringResource(Res.string.settings_licenses_attributions_trakt_body)),
-        PlaybackSearchRow("simkl-attribution", stringResource(Res.string.settings_licenses_attributions_simkl_title), stringResource(Res.string.settings_licenses_attributions_simkl_body)),
-        PlaybackSearchRow("premiumize-attribution", stringResource(Res.string.settings_licenses_attributions_premiumize_title), stringResource(Res.string.settings_licenses_attributions_premiumize_body)),
-        PlaybackSearchRow("torbox-attribution", stringResource(Res.string.settings_licenses_attributions_torbox_title), stringResource(Res.string.settings_licenses_attributions_torbox_body)),
-        PlaybackSearchRow("mdblist-attribution", stringResource(Res.string.settings_licenses_attributions_mdblist_title), stringResource(Res.string.settings_licenses_attributions_mdblist_body)),
-        PlaybackSearchRow("introdb-attribution", stringResource(Res.string.settings_licenses_attributions_introdb_title), stringResource(Res.string.settings_licenses_attributions_introdb_body)),
-        PlaybackSearchRow("imdb-datasets", stringResource(Res.string.settings_licenses_attributions_imdb_title), stringResource(Res.string.settings_licenses_attributions_imdb_body)),
-        PlaybackSearchRow(
-            "player-license",
-            stringResource(playbackLicense.titleRes),
-            stringResource(playbackLicense.licenseRes),
-        ),
-    ).forEach { row ->
-        addRow(
-            page = SettingsPage.LicensesAttributions,
-            key = row.key,
-            title = row.title,
-            description = row.description,
-            pageLabel = licensesPage,
-            section = stringResource(Res.string.compose_settings_root_about_section),
-            category = aboutCategory,
-            icon = Icons.Rounded.Info,
-        )
-    }
     if (checkForUpdatesAvailable) {
         add(
             key = "check-updates",
             title = stringResource(Res.string.compose_settings_root_check_updates_title),
             description = stringResource(Res.string.compose_settings_root_check_updates_description),
-            page = if (supportersContributorsPageEnabled) supportersPage else licensesPage,
+            page = stringResource(Res.string.compose_settings_root_about_section),
             section = stringResource(Res.string.compose_settings_root_about_section),
             category = aboutCategory,
             icon = Icons.Rounded.CloudDownload,

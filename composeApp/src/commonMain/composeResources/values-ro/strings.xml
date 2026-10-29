@@ -415,7 +415,7 @@
     <string name="compose_search_placeholder">Caută filme, seriale...</string>
     <string name="compose_search_recent_searches">Căutări recente</string>
     <string name="compose_search_remove_recent_search">Elimină căutarea recentă</string>
-    <string name="compose_settings_category_about">Despre</string>
+    <string name="compose_settings_category_about">Actualizări</string>
     <string name="compose_settings_category_general">General</string>
     <string name="compose_settings_page_account">Cont</string>
     <string name="compose_settings_page_addons">Extensii</string>
@@ -440,7 +440,7 @@
     <string name="compose_settings_page_supporters_contributors">Susținători și colaboratori</string>
     <string name="compose_settings_page_tmdb_enrichment">Îmbunătățire TMDB</string>
     <string name="compose_settings_page_trakt">Trakt</string>
-    <string name="compose_settings_root_about_section">DESPRE</string>
+    <string name="compose_settings_root_about_section">ACTUALIZĂRI</string>
     <string name="compose_settings_root_account_description">Cont și starea sincronizării</string>
     <string name="compose_settings_root_account_section">CONT</string>
     <string name="compose_settings_root_advanced_description">Comportament pornire și profil.</string>
