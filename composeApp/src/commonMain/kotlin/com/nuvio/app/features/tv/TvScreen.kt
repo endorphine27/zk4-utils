@@ -112,14 +112,8 @@ fun TvScreen(
     val favoriteChannels = remember(channels, preferences.favorites) {
         preferences.favorites.mapNotNull { id -> channels.firstOrNull { it.id == id } }
     }
-    val recentChannels = remember(channels, preferences.recents) {
-        preferences.recents.mapNotNull { recent -> channels.firstOrNull { it.id == recent.id } }
-    }
 
     val openChannel: (MetaPreview) -> Unit = { channel ->
-        TvPreferencesRepository.markWatched(
-            RecentChannel(id = channel.id, type = channel.type, name = channel.name, poster = channel.poster),
-        )
         onChannelClick?.invoke(channel)
     }
 
@@ -187,17 +181,6 @@ fun TvScreen(
                 horizontalArrangement = Arrangement.spacedBy(12.dp),
                 verticalArrangement = Arrangement.spacedBy(16.dp),
             ) {
-                if (!searching && recentChannels.isNotEmpty()) {
-                    item(span = { GridItemSpan(maxLineSpan) }, key = "h-recent") { SectionTitle("Văzute recent") }
-                    items(recentChannels, key = { "recent-${it.id}" }) { channel ->
-                        ChannelTile(
-                            channel = channel,
-                            isFavorite = channel.id in preferences.favorites,
-                            onClick = { openChannel(channel) },
-                            onToggleFavorite = { TvPreferencesRepository.toggleFavorite(channel.id) },
-                        )
-                    }
-                }
                 if (!searching && favoriteChannels.isNotEmpty()) {
                     item(span = { GridItemSpan(maxLineSpan) }, key = "h-fav") { SectionTitle("Favorite") }
                     items(favoriteChannels, key = { "fav-${it.id}" }) { channel ->
