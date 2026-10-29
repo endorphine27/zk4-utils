@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -133,7 +132,6 @@ fun CalendarScreen(
     val todayParts = remember(today) { parseIso(today) ?: Triple(2026, 1, 1) }
     var visibleMonth by remember { mutableStateOf(YearMonth(todayParts.first, todayParts.second)) }
     var selectedDate by remember { mutableStateOf<String?>(null) }
-    var filterShowId by remember { mutableStateOf<String?>(null) }
     val entries = remember { mutableStateListOf<CalendarEntry>() }
     var isLoading by remember { mutableStateOf(true) }
 
@@ -179,12 +177,7 @@ fun CalendarScreen(
         }
     }
 
-    val shows = remember(entries.toList()) {
-        entries.map { it.item }.distinctBy { it.id }.sortedBy { it.name.lowercase() }
-    }
-    val visibleEntries = remember(entries.toList(), filterShowId) {
-        entries.filter { filterShowId == null || it.item.id == filterShowId }
-    }
+    val visibleEntries = entries.toList()
     val watchedState by WatchedRepository.uiState.collectAsState()
     val byDate = remember(visibleEntries) { visibleEntries.groupBy { it.dateIso } }
     val sidePanelDates = remember(visibleEntries, selectedDate, today) {
@@ -209,21 +202,6 @@ fun CalendarScreen(
                 onPrevious = { visibleMonth = visibleMonth.plusMonths(-1) },
                 onNext = { visibleMonth = visibleMonth.plusMonths(1) },
             )
-            if (shows.size > 1) {
-                Spacer(Modifier.height(10.dp))
-                LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    item(key = "all") {
-                        FilterChip(label = "Toate", selected = filterShowId == null, onClick = { filterShowId = null })
-                    }
-                    items(shows, key = { it.id }) { show ->
-                        FilterChip(
-                            label = show.name,
-                            selected = filterShowId == show.id,
-                            onClick = { filterShowId = if (filterShowId == show.id) null else show.id },
-                        )
-                    }
-                }
-            }
             Spacer(Modifier.height(12.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 WeekdayNames.forEach { name ->
@@ -500,25 +478,4 @@ private fun EpisodeRow(
             color = if (watched) colors.primary else colors.onSurfaceVariant,
         )
     }
-}
-
-@Composable
-private fun FilterChip(
-    label: String,
-    selected: Boolean,
-    onClick: () -> Unit,
-) {
-    val colors = MaterialTheme.colorScheme
-    Text(
-        text = label,
-        modifier = Modifier
-            .clip(RoundedCornerShape(20.dp))
-            .background(if (selected) colors.primary else colors.surfaceVariant.copy(alpha = 0.6f))
-            .clickable(onClick = onClick)
-            .padding(horizontal = 14.dp, vertical = 6.dp),
-        style = MaterialTheme.typography.labelLarge,
-        color = if (selected) colors.onPrimary else colors.onSurface,
-        maxLines = 1,
-        overflow = TextOverflow.Ellipsis,
-    )
 }
