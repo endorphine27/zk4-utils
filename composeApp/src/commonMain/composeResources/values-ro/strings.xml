@@ -334,6 +334,7 @@
     <string name="compose_catalog_subtitle_trakt_library">Bibliotecă Trakt</string>
     <string name="compose_nav_home">Acasă</string>
     <string name="compose_nav_library">Bibliotecă</string>
+    <string name="compose_nav_calendar">Calendar</string>
     <string name="compose_nav_profile">Profil</string>
     <string name="compose_nav_search">Caută</string>
     <string name="compose_nav_settings">Setări</string>
