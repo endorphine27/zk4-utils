@@ -871,19 +871,6 @@ internal fun DesktopHoverSidebar(
                     )
                 }
                 DesktopSidebarItem(
-                    label = stringResource(Res.string.compose_nav_library),
-                    selected = selectedTab == AppScreenTab.Library,
-                    expanded = sidebarExpanded,
-                    onClick = { selectTab(AppScreenTab.Library) },
-                ) { color ->
-                    Icon(
-                        painter = painterResource(Res.drawable.sidebar_library),
-                        contentDescription = stringResource(Res.string.compose_nav_library),
-                        modifier = Modifier.size(DesktopSidebarIconSize),
-                        tint = color,
-                    )
-                }
-                DesktopSidebarItem(
                     label = stringResource(Res.string.compose_nav_tv),
                     selected = selectedTab == AppScreenTab.Tv,
                     expanded = sidebarExpanded,
@@ -892,6 +879,19 @@ internal fun DesktopHoverSidebar(
                     Icon(
                         painter = painterResource(Res.drawable.sidebar_tv),
                         contentDescription = stringResource(Res.string.compose_nav_tv),
+                        modifier = Modifier.size(DesktopSidebarIconSize),
+                        tint = color,
+                    )
+                }
+                DesktopSidebarItem(
+                    label = stringResource(Res.string.compose_nav_library),
+                    selected = selectedTab == AppScreenTab.Library,
+                    expanded = sidebarExpanded,
+                    onClick = { selectTab(AppScreenTab.Library) },
+                ) { color ->
+                    Icon(
+                        painter = painterResource(Res.drawable.sidebar_library),
+                        contentDescription = stringResource(Res.string.compose_nav_library),
                         modifier = Modifier.size(DesktopSidebarIconSize),
                         tint = color,
                     )
