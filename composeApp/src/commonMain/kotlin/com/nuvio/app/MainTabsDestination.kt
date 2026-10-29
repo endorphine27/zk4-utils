@@ -92,12 +92,12 @@ internal fun MainTabsDestination(
         } else {
             liquidGlassNativeTabBarSupported && liquidGlassNativeTabBarEnabled && initialHomeReady
         }
-        val useDesktopSidebar = isDesktop &&
+        val useDesktopSidebar = (isDesktop || isTelevision) &&
             isTabletLayout &&
             !useNativeBottomTabs &&
             desktopNavigationLayout == DesktopNavigationLayout.Sidebar
         val useDesktopTopBar = isDesktop && !useNativeBottomTabs && !useDesktopSidebar
-        val useFloatingTopBar = !isDesktop && isTabletLayout && !useNativeBottomTabs
+        val useFloatingTopBar = !isDesktop && !isTelevision && isTabletLayout && !useNativeBottomTabs
         val topChromePadding = if (useFloatingTopBar || useDesktopTopBar) {
             val statusBarPadding = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
             if (useDesktopTopBar) {
@@ -121,7 +121,8 @@ internal fun MainTabsDestination(
         val isSidebarHovered by sidebarHoverSource.collectIsHoveredAsState()
         var isProfileStackVisible by remember { mutableStateOf(false) }
 
-        val isSidebarExpanded = when (navBarStyleSetting) {
+        val sidebarNavStyle = if (isTelevision) NavBarStyle.EXPANDED else navBarStyleSetting
+        val isSidebarExpanded = when (sidebarNavStyle) {
             NavBarStyle.EXPANDED -> true
             NavBarStyle.COMPACT -> isProfileStackVisible
             else -> isSidebarHovered || isProfileStackVisible // ADAPTIVE
@@ -133,7 +134,7 @@ internal fun MainTabsDestination(
             label = "desktop_sidebar_width",
         )
 
-        val isSidebarAlwaysExpanded = useDesktopSidebar && navBarStyleSetting == NavBarStyle.EXPANDED
+        val isSidebarAlwaysExpanded = useDesktopSidebar && sidebarNavStyle == NavBarStyle.EXPANDED
         val contentStartPadding = if (useDesktopSidebar) {
             if (isSidebarAlwaysExpanded) DesktopSidebarExpandedWidth else DesktopSidebarCollapsedWidth
         } else {
