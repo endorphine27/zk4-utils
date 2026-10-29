@@ -45,12 +45,18 @@ jobs:
       - name: Create empty local.properties
         run: touch local.properties
 
+      # Every build gets an increasing, zero-padded version (0.1.33-alpha.0030) so the in-app updater
+      # and GitHub's release ordering both agree on which one is the newest.
+      - name: Compute app version
+        run: echo "APP_VERSION=0.1.33-alpha.$(printf '%04d' "${GITHUB_RUN_NUMBER}")" >> "$GITHUB_ENV"
+
       - name: Build unsigned DMG
         env:
           MACOS_ARCH: ${{ inputs.arch }}
         run: |
           ./gradlew :composeApp:packageReleaseDmg \
             "-Pnuvio.macos.arch=${MACOS_ARCH}" \
+            "-Pnuvio.desktop.versionName=${APP_VERSION}" \
             -Pcompose.desktop.packaging.checkJdkVendor=false \
             --no-configuration-cache --no-daemon --stacktrace
 
@@ -62,5 +68,5 @@ jobs:
           dmg="$(find composeApp/build -name "Cinebox-macOS-${MACOS_ARCH}-*.dmg" | head -n 1)"
           test -f "$dmg"
           ls -lh "$dmg"
-          tag="personal-${MACOS_ARCH}-${GITHUB_RUN_NUMBER}"
-          gh release create "$tag" "$dmg" --title "Personal build ${MACOS_ARCH} #${GITHUB_RUN_NUMBER}" --notes "Unsigned personal build of the fork." --prerelease
+          tag="v${APP_VERSION}"
+          gh release create "$tag" "$dmg" --title "Build ${GITHUB_RUN_NUMBER} (${MACOS_ARCH})" --notes "Unsigned build." --prerelease
