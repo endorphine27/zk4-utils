@@ -1750,6 +1750,21 @@ static void setMpvOptionString(mpv_handle *mpv, const char *name, const char *va
     setMpvOptionString(_mpv, "tone-mapping", "auto");
     setMpvOptionString(_mpv, "hdr-compute-peak", "no");
     setMpvOptionString(_mpv, "dither-depth", "auto");
+    // Sharper scaling (close to mpv's gpu-hq profile) without the cost of EWA filters at 4K.
+    setMpvOptionString(_mpv, "scale", "spline36");
+    setMpvOptionString(_mpv, "cscale", "spline36");
+    setMpvOptionString(_mpv, "dscale", "mitchell");
+    setMpvOptionString(_mpv, "correct-downscaling", "yes");
+    setMpvOptionString(_mpv, "sigmoid-upscaling", "yes");
+    // Lock playback to the display refresh so 24 fps films do not judder (no frame interpolation).
+    // The render API cannot query the refresh rate itself, so pass it explicitly.
+    {
+        NSInteger displayFps = NSScreen.mainScreen.maximumFramesPerSecond;
+        if (displayFps >= 30) {
+            setMpvOptionString(_mpv, "display-fps-override", [NSString stringWithFormat:@"%ld", (long)displayFps].UTF8String);
+            setMpvOptionString(_mpv, "video-sync", "display-resample");
+        }
+    }
     setMpvOptionString(_mpv, "demuxer-max-bytes", "150MiB");
     // YouTube/googlevideo HLS playlists have no Content-Length: with reconnect_streamed ffmpeg treats the
     // normal end of each playlist as a dropped connection and reconnects forever, so the video never starts.
