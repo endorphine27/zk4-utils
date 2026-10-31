@@ -60,7 +60,7 @@ internal object DesktopStorage {
         val osName = System.getProperty("os.name").orEmpty().lowercase(Locale.ROOT)
         val userHome = Paths.get(System.getProperty("user.home").orEmpty())
         return when {
-            osName.contains("mac") -> userHome.resolve("Library/Caches/Nuvio")
+            osName.contains("mac") -> userHome.resolve("Library/Caches/CINEBOX")
             osName.contains("win") -> {
                 val localAppData = System.getenv("LOCALAPPDATA")?.takeIf { it.isNotBlank() }
                 (localAppData?.let(Paths::get) ?: userHome.resolve("AppData/Local")).resolve("Nuvio/Cache")
